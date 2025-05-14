@@ -1,149 +1,45 @@
-/* General */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* SECCIONES INFORMATIVAS */
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #1a1a1a;
+  gap: 20px;
 }
 
-h2, h3 {
+.info-box {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #333;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
   color: #fff;
-}
-
-footer {
-  background-color: #222;
-  color: white;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9rem;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease, opacity 0.5s ease;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
 }
 
-.navbar {
-  background-color: black;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  align-items: center;
+.info-box h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: crimson;
 }
 
-.navbar .logo {
-  height: 50px;
+.info-box p {
+  font-size: 1rem;
+  color: #ccc;
 }
 
-.navbar .menu a {
-  color: yellow;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.2rem;
-}
-
-/* Carrusel */
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 70vh;
-  overflow: hidden;
-}
-
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 1;  /* Asegura que los slides estén por encima del fondo */
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img, .slide video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;  /* El fondo debe estar en el fondo */
-}
-
-.caption {
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  z-index: 2;  /* Asegura que el texto se vea por encima del fondo */
-}
-
-.caption h2 {
-  font-size: 2rem;
-  margin: 0;
-}
-
-.caption p {
-  font-size: 1.2rem;
-}
-
-.caption .btn {
-  padding: 10px 20px;
-  background: crimson;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.caption .btn:hover {
-  background: darkred;
-}
-
-/* Flechas de navegación */
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 3;  /* Asegura que las flechas estén por encima */
-}
-
-.prev {
-  left: 10px;
-  transform: translateY(-50%);
-}
-
-.next {
-  right: 10px;
-  transform: translateY(-50%);
-}
-
-/* Secciones */
-.sections {
-  display: flex;
-  justify-content: space-around;
-  padding: 40px;
-}
-
-.section {
-  background-color: #333;
-  color: white;
-  width: 22%;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
-
-.section:hover {
-  transform: scale(1.05);
-}
-
-/* Footer */
-footer {
-  background-color: #222;
-  color: white;
-  padding: 20px;
-  text-align: center;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
