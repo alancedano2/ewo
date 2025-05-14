@@ -16,7 +16,6 @@ document.querySelector('.prev-btn').addEventListener('click', () => {
   showSlide(index - 1);
 });
 
-// Auto-slide cada 15 segundos
 setInterval(() => {
   showSlide(index + 1);
 }, 15000);
