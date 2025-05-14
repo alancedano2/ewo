@@ -157,3 +157,29 @@ body {
     transform: translateY(0);
   }
 }
+/* SECCIONES INFORMATIVAS */
+.secciones {
+  padding: 40px 20px;
+  background: #111;
+}
+
+.seccion {
+  margin-bottom: 60px;
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.seccion h2 {
+  color: yellow;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.seccion p {
+  color: #ddd;
+  font-size: 18px;
+  line-height: 1.6;
+  }
+}
