@@ -1,42 +1,33 @@
-let currentSlide = 0;
+let currentIndex = 0;
 const slides = document.querySelectorAll('.carousel-slide');
 const totalSlides = slides.length;
 
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
-function showSlide(index) {
-  if (index < 0) {
-    currentSlide = totalSlides - 1;
-  } else if (index >= totalSlides) {
-    currentSlide = 0;
+function changeSlide() {
+  if (currentIndex >= totalSlides) {
+    currentIndex = 0;
+  } else if (currentIndex < 0) {
+    currentIndex = totalSlides - 1;
   }
-  document.querySelector('.carousel-wrapper').style.transform = `translateX(-${100 * currentSlide}%)`;
+
+  const newTransform = -100 * currentIndex;
+  document.querySelector('.carousel-wrapper').style.transform = `translateX(${newTransform}%)`;
 }
 
-prevBtn.addEventListener('click', () => {
-  currentSlide--;
-  showSlide(currentSlide);
-});
-
 nextBtn.addEventListener('click', () => {
-  currentSlide++;
-  showSlide(currentSlide);
+  currentIndex++;
+  changeSlide();
 });
 
-// Animación para que los cuadros aparezcan con fade-in
-document.addEventListener('DOMContentLoaded', () => {
-  const infoBoxes = document.querySelectorAll('.info-box');
-  let delay = 0;
-  infoBoxes.forEach((box) => {
-    setTimeout(() => {
-      box.classList.add('fade-in');
-    }, delay);
-    delay += 1000; // Incrementa el tiempo de cada fade-in
-  });
+prevBtn.addEventListener('click', () => {
+  currentIndex--;
+  changeSlide();
 });
 
+// Automatic Slide Change (optional)
 setInterval(() => {
-  currentSlide++;
-  showSlide(currentSlide);
-}, 15000); // Cambiar cada 15 segundos
+  currentIndex++;
+  changeSlide();
+}, 5000);
