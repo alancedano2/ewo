@@ -1,21 +1,30 @@
-let index = 0;
+let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-slide');
-const wrapper = document.querySelector('.carousel-wrapper');
-const total = slides.length;
+const totalSlides = slides.length;
 
-function showSlide(idx) {
-  index = (idx + total) % total;
-  wrapper.style.transform = `translateX(-${index * 100}%)`;
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+function showSlide(index) {
+  if (index < 0) {
+    currentSlide = totalSlides - 1;
+  } else if (index >= totalSlides) {
+    currentSlide = 0;
+  }
+  document.querySelector('.carousel-wrapper').style.transform = `translateX(-${100 * currentSlide}%)`;
 }
 
-document.querySelector('.next-btn').addEventListener('click', () => {
-  showSlide(index + 1);
+prevBtn.addEventListener('click', () => {
+  currentSlide--;
+  showSlide(currentSlide);
 });
 
-document.querySelector('.prev-btn').addEventListener('click', () => {
-  showSlide(index - 1);
+nextBtn.addEventListener('click', () => {
+  currentSlide++;
+  showSlide(currentSlide);
 });
 
 setInterval(() => {
-  showSlide(index + 1);
-}, 15000);
+  currentSlide++;
+  showSlide(currentSlide);
+}, 15000); // Cambiar cada 15 segundos
