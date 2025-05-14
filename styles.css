@@ -1,53 +1,4 @@
-/* Reseteo básico de márgenes y padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body y estructura principal */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  padding: 0;
-  margin: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: black;
-  padding: 20px;
-}
-
-header .logo img {
-  height: 50px;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-}
-
-header nav ul li {
-  margin-left: 30px;
-}
-
-header nav ul li a {
-  color: yellow;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-  color: white;
-}
-
-/* Carrusel */
+/* Carrusel principal */
 .carrusel {
   position: relative;
   width: 100%;
@@ -57,7 +8,7 @@ header nav ul li a:hover {
 
 .carousel-container {
   display: flex;
-  transition: transform 1s ease-in-out;
+  transition: transform 1s ease-in-out; /* Transición de deslizamiento */
 }
 
 .carousel-item {
@@ -107,39 +58,41 @@ header nav ul li a:hover {
   background-color: #ffcc00;
 }
 
-/* Fade-in de la información */
-.fade-in {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-/* Cuadros informativos */
-.cuadros-info {
+/* Secciones informativas */
+.info-sections {
   display: flex;
-  justify-content: space-between;
-  margin: 40px 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-.card {
-  background-color: #fff;
+.info-section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin: 10px;
   width: 45%;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  text-align: center;
 }
 
-.card h3 {
-  font-size: 1.6em;
-  margin-bottom: 15px;
+.info-section h2 {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.description-card {
-  background-color: #fff;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.info-section p {
+  font-size: 1.2em;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
