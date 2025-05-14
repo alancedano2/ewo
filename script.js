@@ -1,9 +1,22 @@
 let index = 0;
 const slides = document.querySelectorAll('.carousel-slide');
+const wrapper = document.querySelector('.carousel-wrapper');
+const total = slides.length;
 
-function showSlide() {
-  index = (index + 1) % slides.length;
-  document.querySelector('.carousel-wrapper').style.transform = `translateX(-${index * 100}%)`;
+function showSlide(idx) {
+  index = (idx + total) % total;
+  wrapper.style.transform = `translateX(-${index * 100}%)`;
 }
 
-setInterval(showSlide, 15000); // 15 segundos
+document.querySelector('.next-btn').addEventListener('click', () => {
+  showSlide(index + 1);
+});
+
+document.querySelector('.prev-btn').addEventListener('click', () => {
+  showSlide(index - 1);
+});
+
+// Auto-slide cada 15 segundos
+setInterval(() => {
+  showSlide(index + 1);
+}, 15000);
