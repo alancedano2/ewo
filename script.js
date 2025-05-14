@@ -1,14 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.querySelector('.carousel-container');
-  const totalSlides = document.querySelectorAll('.carousel-item').length;
-  let index = 0;
+// Este script puede ser para el control del carrusel
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
 
-  // Función que cambia el índice para mostrar el siguiente item del carrusel
-  function moveToNextSlide() {
-    index = (index + 1) % totalSlides;
-    carousel.style.transform = `translateX(-${index * 100}%)`;  // Mueve el carrusel
-  }
+function nextSlide() {
+    items[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex + 1) % totalItems;
+    items[currentIndex].style.display = 'block';
+}
 
-  // Cambiar de imagen cada 5 segundos
-  setInterval(moveToNextSlide, 5000);
-});
+function prevSlide() {
+    items[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    items[currentIndex].style.display = 'block';
+}
+
+// Mostrar el primer slide
+items[currentIndex].style.display = 'block';
+
+// Cambiar cada 5 segundos
+setInterval(nextSlide, 5000);
