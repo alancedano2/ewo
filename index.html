@@ -1,99 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>eWo Página Principal</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extreme Wrestling Organization</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
-  <!-- Barra superior -->
-  <header class="top-bar">
-    <img src="logo.png" alt="Logo eWo" class="logo">
-    <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="programas.html">Programas</a>
-      <a href="tv.html">TV</a>
-      <a href="shopzone.html">ShopZone</a>
+  <!-- Header con logo y menú -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="EWO Logo" />
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#eventos">Eventos</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a href="#tv">TV</a></li>
+        <li><a href="#shopzone">ShopZone</a></li>
+      </ul>
     </nav>
   </header>
 
   <!-- Carrusel -->
-  <section class="carousel">
-    <div class="carousel-wrapper">
-      <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_1/fondo_1.jpg');">
-        <div class="carousel-content">
+  <section class="carrusel">
+    <div class="carousel-slide">
+      <div class="carousel-item" style="background-image: url('carrusel/fondo_1.jpg');">
+        <div class="carousel-text">
           <h2>eWo Live: 24 de mayo del 2025</h2>
-          <a href="eventos.html" class="btn">Más Información</a>
+          <a href="#eventos" class="btn-more">Más Información</a>
         </div>
       </div>
-      <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_2/fondo_2.jpg');">
-        <div class="carousel-content">
+      <div class="carousel-item" style="background-image: url('carrusel/fondo_2.jpg');">
+        <div class="carousel-text">
           <h2>eWo El Update</h2>
           <p>Todos los sábados a las 10pm</p>
-          <a href="tv.html" class="btn">Más Información</a>
+          <a href="#tv" class="btn-more">Más Información</a>
         </div>
       </div>
-      <div class="carousel-slide video-slide">
-        <video autoplay muted loop playsinline>
-          <source src="./carrusel-imagenes/carrusel_3/fondovideo_3.mp4" type="video/mp4" />
+      <div class="carousel-item">
+        <video class="video-slide" autoplay loop muted>
+          <source src="carrusel/fondo_3.mp4" type="video/mp4" />
         </video>
-        <div class="video-overlay"></div>
-        <div class="carousel-content">
+        <div class="carousel-text">
           <h2>eWo ShopZone</h2>
-          <a href="shopzone.html" class="btn">Más Información</a>
+          <a href="#shopzone" class="btn-more">Más Información</a>
         </div>
       </div>
     </div>
-    <button class="nav-btn prev-btn">&#10094;</button>
-    <button class="nav-btn next-btn">&#10095;</button>
   </section>
 
-  <!-- Sección de Información Fade -->
-  <section class="info-fade">
-    <div class="info-box">
-      <h2>La Extreme Wrestling Organization (eWo)</h2>
-      <p class="info-text">La Extreme Wrestling Organization (eWo) es una promotora de lucha libre profesional originada en San Juan, Puerto Rico, que se autodenomina como "Tu Alternativa Real". Fundada en 2008 bajo el lema "Tu Alternativa Real", la eWo se estableció como una alternativa al panorama tradicional de la lucha libre en la isla.</p>
+  <!-- Sección informativa (con fade-in) -->
+  <section class="informacion">
+    <div class="fade-in">
+      <p>La Extreme Wrestling Organization (EWO) es una promotora de lucha libre profesional originada en San Juan, Puerto Rico, que se autodenomina como "Tu Alternativa Real". Fundada en 2008 bajo el lema "Tu Alternativa Real", la EWO se estableció como una alternativa al panorama tradicional de la lucha libre en la isla.</p>
     </div>
+  </section>
 
-    <div class="info-box">
+  <!-- Cuadros informativos -->
+  <section class="cuadros-info">
+    <div class="card">
       <h3>Figuras Claves</h3>
-      <p class="info-text">Jorge Casanova "Montana" es el presidente y propietario de la Extreme Wrestling Organization (eWo) en Puerto Rico. Bajo su liderazgo, la eWo ha continuado su compromiso con la innovación y la calidad en la lucha libre, manteniendo su relevancia en el escenario local.</p>
+      <p>Jorge Casanova "Montana" es el presidente y propietario de la Extreme Wrestling Organization (EWO) en Puerto Rico...</p>
     </div>
-
-    <div class="info-box">
-      <h3>Eventos Importantes</h3>
-      <p class="info-text">La eWo (Extreme Wrestling Organization) estuvo inactiva por un tiempo, pero regresó en 2024 con un enfoque renovado. Su primer gran evento fue eWo Xmas Aggression 2024, que se celebró el 7 de diciembre en Caguas, Puerto Rico, y fue transmitido en vivo por YouTube. Este evento marcó el retorno de la eWo con combates emocionantes.</p>
+    <div class="card">
+      <h3>Eventos Pasados</h3>
+      <p>La EWO (Extreme Wrestling Organization) estuvo inactiva por un tiempo, pero regresó en 2024 con un enfoque renovado...</p>
     </div>
   </section>
 
-  <!-- Descripciones de Secciones -->
-  <section class="sections-description">
-    <div class="section-box">
+  <!-- Descripción de secciones -->
+  <section class="descripciones">
+    <div class="description-card">
       <h3>Eventos</h3>
-      <p>En esta sección tendrás todo lo relacionado a los eventos en vivo, resúmenes, repeticiones y más.</p>
+      <p>En esta sección tendrás todo lo relacionado a eventos en vivo, resúmenes, repeticiones y más.</p>
     </div>
-    <div class="section-box">
+    <div class="description-card">
       <h3>Programas</h3>
-      <p>En esta sección tendrás todo lo relacionado a los programas de eWo, como El Update, programas especiales y más.</p>
+      <p>En esta sección tendrás todo relacionado a los programas de eWo, como El Update, programas especiales y más.</p>
     </div>
-    <div class="section-box">
+    <div class="description-card">
       <h3>TV</h3>
-      <p>En esta sección tendrás un live 24/7 transmitiendo todo lo de la eWo, incluyendo eventos en vivo, como eWo Xmas Aggression 2024, entre otros programas.</p>
+      <p>En esta sección tendrás un live 24/7 transmitiendo todo lo de la eWo, eventos en vivo y más.</p>
     </div>
-    <div class="section-box">
+    <div class="description-card">
       <h3>ShopZone</h3>
-      <p>En esta sección tendrás todo lo relacionado con la tienda de eWo, como gorras, camisas, y productos de luchadores como Rikochet, Los Toros Salvajes, entre muchos más.</p>
+      <p>En esta sección tendrás todo lo de la tienda de eWo, como gorras, camisas, etc.</p>
     </div>
   </section>
 
   <!-- Footer con Copyright -->
-  <footer class="footer">
+  <footer>
     <p>&copy; 2025 Extreme Wrestling Organization. Todos los derechos reservados.</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
