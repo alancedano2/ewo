@@ -1,33 +1,11 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-const totalSlides = slides.length;
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel-slide");
+  let index = 0;
+  const totalSlides = document.querySelectorAll(".carousel-item").length;
 
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-function changeSlide() {
-  if (currentIndex >= totalSlides) {
-    currentIndex = 0;
-  } else if (currentIndex < 0) {
-    currentIndex = totalSlides - 1;
-  }
-
-  const newTransform = -100 * currentIndex;
-  document.querySelector('.carousel-wrapper').style.transform = `translateX(${newTransform}%)`;
-}
-
-nextBtn.addEventListener('click', () => {
-  currentIndex++;
-  changeSlide();
+  // Cambia el slide cada 5 segundos
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }, 5000);
 });
-
-prevBtn.addEventListener('click', () => {
-  currentIndex--;
-  changeSlide();
-});
-
-// Automatic Slide Change (optional)
-setInterval(() => {
-  currentIndex++;
-  changeSlide();
-}, 5000);
