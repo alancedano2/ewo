@@ -1,22 +1,12 @@
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-showSlides();
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-function plusSlides(n) {
-  slideIndex += n;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  updateSlides();
+function moveSlide(step) {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+  slides[currentSlide].classList.add('active');
 }
 
-function showSlides() {
-  updateSlides();
-  setTimeout(showSlides, 15000); // 15 segundos
-}
-
-function updateSlides() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[slideIndex].style.display = "block";
-}
+// Automáticamente cambiar el slide cada 5 segundos
+setInterval(() => moveSlide(1), 5000);
