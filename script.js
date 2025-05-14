@@ -1,23 +1,24 @@
 let slideIndex = 0;
-let slides = document.getElementsByClassName("slides");
-let timer;
+const slides = document.querySelectorAll('.slide');
 
-function showSlides(n) {
-  clearTimeout(timer);
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex = n;
-  if (slideIndex >= slides.length) slideIndex = 0;
-  if (slideIndex < 0) slideIndex = slides.length - 1;
-  slides[slideIndex].style.display = "block";
-  timer = setTimeout(() => showSlides(slideIndex + 1), 15000);
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+    if (i === index) slide.classList.add('active');
+  });
 }
 
-function plusSlides(n) {
-  showSlides(slideIndex + n);
+function moveSlide(n) {
+  slideIndex = (slideIndex + n + slides.length) % slides.length;
+  showSlide(slideIndex);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  showSlides(slideIndex);
+function autoSlide() {
+  moveSlide(1);
+  setTimeout(autoSlide, 15000); // 15s por slide
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  showSlide(slideIndex);
+  setTimeout(autoSlide, 15000);
 });
