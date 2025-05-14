@@ -3,8 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalSlides = document.querySelectorAll('.carousel-item').length;
   let index = 0;
 
-  setInterval(() => {
+  // Función que cambia el índice para mostrar el siguiente item del carrusel
+  function moveToNextSlide() {
     index = (index + 1) % totalSlides;
-    carousel.style.transform = `translateX(-${index * 100}%)`;
-  }, 5000); // Cada 5 segundos cambia la imagen
+    carousel.style.transform = `translateX(-${index * 100}%)`;  // Mueve el carrusel
+  }
+
+  // Cambiar de imagen cada 5 segundos
+  setInterval(moveToNextSlide, 5000);
 });
