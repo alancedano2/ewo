@@ -1,109 +1,214 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>eWo Página Principal</title>
-  <link rel="stylesheet" href="estilos/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header class="top-bar">
-    <img src="imagenes/logo.png" alt="Logo eWo" class="logo">
-    <nav class="nav-links">
-      <a href="index.html">Inicio</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="programas.html">Programas</a>
-      <a href="tv.html">TV</a>
-      <a href="shopzone.html">ShopZone</a>
-    </nav>
-  </header>
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
 
-  <!-- Carrusel -->
-  <section class="carousel">
-    <div class="carousel-wrapper">
-      <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_1/fondo_1.jpg');">
-        <div class="carousel-content">
-          <h2>eWo Live: 24 de mayo del 2025</h2>
-          <a href="eventos.html" class="btn">Más Información</a>
-        </div>
-      </div>
-      <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_2/fondo_2.jpg');">
-        <div class="carousel-content">
-          <h2>eWo El Update</h2>
-          <p>Todos los sábados a las 10pm</p>
-          <a href="tv.html" class="btn">Más Información</a>
-        </div>
-      </div>
-      <div class="carousel-slide video-slide">
-        <video autoplay muted loop playsinline>
-          <source src="./carrusel-imagenes/carrusel_3/fondovideo_3.mp4" type="video/mp4" />
-        </video>
-        <div class="video-overlay"></div>
-        <div class="carousel-content">
-          <h2>eWo ShopZone</h2>
-          <a href="shopzone.html" class="btn">Más Información</a>
-        </div>
-      </div>
-    </div>
-    <button class="nav-btn prev-btn">&#10094;</button>
-    <button class="nav-btn next-btn">&#10095;</button>
-  </section>
+.top-bar {
+  background-color: #000;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  <!-- Texto Fade-in y Cuadros con Información -->
-  <section class="info-section">
-    <div class="fade-in-text">
-      <p>La Extreme Wrestling Organization (EWO) es una promotora de lucha libre profesional originada en San Juan, Puerto Rico, que se autodenomina como "Tu Alternativa Real". Fundada en 2008 bajo el lema "Tu Alternativa Real", la EWO se estableció como una alternativa al panorama tradicional de la lucha libre en la isla.</p>
-    </div>
+.logo {
+  height: 50px;
+}
 
-    <div class="info-boxes">
-      <div class="info-box">
-        <h3>Figuras Claves</h3>
-        <p><strong>Jorge Casanova "Montana"</strong> es el presidente y propietario de la Extreme Wrestling Organization (EWO) en Puerto Rico. Bajo su liderazgo, la EWO ha continuado su compromiso con la innovación y la calidad en la lucha libre, manteniendo su relevancia en el escenario local.</p>
-      </div>
+.nav-links a {
+  color: yellow;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
 
-      <div class="info-box">
-        <h3>El Regreso de la EWO</h3>
-        <p>La EWO (Extreme Wrestling Organization) estuvo inactiva por un tiempo, pero regresó en 2024 con un enfoque renovado. Su primer gran evento fue <strong>EWO Xmas Aggression 2024</strong>, que se celebró el 7 de diciembre en Caguas, Puerto Rico, y fue transmitido en vivo por YouTube. Este evento marcó el retorno de la EWO con combates emocionantes.</p>
-      </div>
-    </div>
-  </section>
+.nav-links a:hover {
+  text-decoration: underline;
+}
 
-  <!-- Descripciones de las secciones -->
-  <section class="secciones-descripcion">
-    <div class="descripcion">
-      <div class="descripcion-box">
-        <h2>Eventos</h2>
-        <p>En esta sección encontrarás todo lo relacionado a eventos en vivo de la EWO, resúmenes, repeticiones, entre otros. ¡No te pierdas lo más emocionante de la lucha libre!</p>
-      </div>
-    </div>
+/* Carrusel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+}
 
-    <div class="descripcion">
-      <div class="descripcion-box">
-        <h2>Programas</h2>
-        <p>Aquí podrás ver todo el contenido relacionado a los programas de la EWO, como <strong>El Update</strong>, programas especiales, entrevistas, y mucho más. ¡Mantente al día con todas las noticias y eventos de la organización!</p>
-      </div>
-    </div>
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
 
-    <div class="descripcion">
-      <div class="descripcion-box">
-        <h2>TV</h2>
-        <p>En esta sección podrás disfrutar de un <strong>live 24/7</strong> transmitiendo todo lo relacionado a la EWO, incluyendo eventos en vivo como <strong>eWo Xmas Aggression 2024</strong> y otros programas exclusivos de la organización.</p>
-      </div>
-    </div>
+.carousel-slide {
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    <div class="descripcion">
-      <div class="descripcion-box">
-        <h2>ShopZone</h2>
-        <p>La EWO ShopZone es tu lugar para adquirir todo tipo de productos oficiales de la organización. Desde gorras, camisetas hasta mercancía de tus luchadores favoritos como <strong>Rikochet</strong> y <strong>Los Toros Salvajes</strong>, ¡todo lo que necesitas para mostrar tu apoyo!</p>
-      </div>
-    </div>
-  </section>
+.video-slide video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
-  <!-- Footer con Copyright -->
-  <footer class="footer">
-    <p>&copy; 2025 Extreme Wrestling Organization. Todos los derechos reservados.</p>
-  </footer>
+.video-overlay {
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-  <script src="scripts/script.js"></script>
-</body>
-</html>
+.carousel-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-content h2,
+.carousel-content p {
+  color: white;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.carousel-content a.btn {
+  font-weight: 600;
+  font-size: 1rem;
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  transition: background 0.3s, color 0.3s;
+}
+
+.carousel-content a.btn:hover {
+  background-color: black;
+  color: yellow;
+  border: 2px solid yellow;
+}
+
+/* Botones navegación */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: yellow;
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 15px;
+  z-index: 3;
+  transition: background 0.3s;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 0, 0.7);
+  color: black;
+}
+
+/* Fade-in de texto */
+.fade-in-text {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Cuadros de información */
+.info-section {
+  padding: 40px;
+  background-color: #1a1a1a;
+}
+
+.info-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.info-box {
+  background-color: #333;
+  padding: 20px;
+  width: 45%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.info-box h3 {
+  font-weight: bold;
+  color: yellow;
+  margin-bottom: 15px;
+}
+
+.info-box p {
+  color: white;
+  line-height: 1.6;
+}
+
+/* Secciones de la descripción */
+.secciones-descripcion {
+  padding: 40px;
+  background-color: #1a1a1a;
+}
+
+.descripcion-box {
+  background-color: #333;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.descripcion h2 {
+  font-weight: bold;
+  color: yellow;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.descripcion p {
+  color: white;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  font-size: 0.9rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
