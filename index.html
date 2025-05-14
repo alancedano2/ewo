@@ -1,91 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EWO</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EWO | Tu Alternativa Real</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <img src="logo.png" alt="EWO Logo" class="logo">
-    <div class="menu">
-      <a href="#inicio">Inicio</a>
-      <a href="#eventos">Eventos</a>
-      <a href="#programas">Programas</a>
-      <a href="#tv">TV</a>
-      <a href="#shopzone">ShopZone</a>
-    </div>
-  </div>
-
-  <!-- Carrusel -->
+  <!-- CARRUSEL -->
   <div class="carousel-container">
     <div class="slide active">
-      <img src="carrusel/fondo_1.jpg" alt="eWo Live">
+      <img src="carrusel/fondo_1.jpg" alt="EWO Slide 1" />
       <div class="caption">
-        <h2>🔥 eWo Live - 24 de mayo del 2025</h2>
-        <p>Prepárate para el evento más extremo del año en Puerto Rico.</p>
-        <a href="#eventos" class="btn">Más Información</a>
+        <h2>Xmas Aggression 2024</h2>
+        <p>Regresamos con más fuerza este diciembre.</p>
+        <a href="#" class="btn">Ver Evento</a>
       </div>
     </div>
 
     <div class="slide">
-      <img src="carrusel/fondo_2.jpg" alt="eWo El Update">
+      <img src="carrusel/fondo_2.jpg" alt="EWO Slide 2" />
       <div class="caption">
-        <h2>🎬 eWo El Update</h2>
-        <p>Todos los sábados a las 10pm, no te lo puedes perder.</p>
-        <a href="#tv" class="btn">Más Información</a>
+        <h2>Los Toros Salvajes</h2>
+        <p>El tag team más dominante regresa a la acción.</p>
+        <a href="#" class="btn">Conócelos</a>
       </div>
     </div>
 
     <div class="slide">
-      <video class="background-video" autoplay loop muted>
-        <source src="carrusel/fondo_3.mp4" type="video/mp4">
+      <video autoplay muted loop>
+        <source src="carrusel/fondo_3.mp4" type="video/mp4" />
       </video>
-      <div class="caption">
-        <h2>🛒 eWo ShopZone</h2>
-        <p>Consigue todo lo que necesitas de EWO.</p>
-        <a href="#shopzone" class="btn">Más Información</a>
+      <div class="caption dark">
+        <h2>La Revolución EWO</h2>
+        <p>Una nueva era ha comenzado en la lucha libre puertorriqueña.</p>
+        <a href="#" class="btn">Explorar</a>
       </div>
     </div>
 
-    <!-- Flechas de navegación -->
-    <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
-    <span class="next" onclick="moveSlide(1)">&#10095;</span>
+    <!-- Flechas -->
+    <div class="prev">&#10094;</div>
+    <div class="next">&#10095;</div>
   </div>
 
-  <!-- Información de la empresa -->
-  <div class="about">
-    <h2>La Extreme Wrestling Organization (EWO)</h2>
-    <p>La EWO es una promotora de lucha libre profesional originada en San Juan, Puerto Rico, fundada en 2008.</p>
-  </div>
+  <!-- SECCIONES INFORMATIVAS -->
+  <section class="info-section">
+    <div class="info-box">
+      <h3>EVENTOS</h3>
+      <p>Entérate de los próximos eventos en vivo de EWO. ¡La acción no se detiene!</p>
+    </div>
 
-  <!-- Cuadros con información de secciones -->
-  <div class="sections">
-    <div class="section">
-      <h3>Eventos</h3>
-      <p>En esta sección tendrás todo lo relacionado a eventos en vivo, resúmenes, repeticiones, etc.</p>
+    <div class="info-box">
+      <h3>PROGRAMAS</h3>
+      <p>Revive los episodios de EWO TV y conoce a tus luchadores favoritos.</p>
     </div>
-    <div class="section">
-      <h3>Programas</h3>
-      <p>En esta sección tendrás todo lo relacionado a los programas de EWO, como El Update, programas especiales y más.</p>
-    </div>
-    <div class="section">
-      <h3>TV</h3>
-      <p>En esta sección tendrás un live 24/7 transmitiendo todo lo de EWO, eventos en vivo y programas.</p>
-    </div>
-    <div class="section">
-      <h3>ShopZone</h3>
-      <p>En esta sección podrás comprar productos oficiales de EWO, como gorras, camisas, y mucho más.</p>
-    </div>
-  </div>
 
-  <!-- Copyright -->
-  <footer>
-    <p>&copy; 2025 Extreme Wrestling Organization. Todos los derechos reservados.</p>
-  </footer>
+    <div class="info-box">
+      <h3>TV EWO</h3>
+      <p>Disfruta de contenido exclusivo, entrevistas, detrás de cámaras y más.</p>
+    </div>
+
+    <div class="info-box">
+      <h3>SHOPZONE</h3>
+      <p>Compra mercancía oficial de EWO: camisas, gorras, posters y mucho más.</p>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>
