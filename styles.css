@@ -75,4 +75,88 @@ header nav ul li a:hover {
 }
 
 .carousel-text {
-  posit
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+}
+
+.carousel-text h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.carousel-text p {
+  font-size: 1.2em;
+}
+
+.btn-more {
+  background-color: yellow;
+  color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-more:hover {
+  background-color: #ffcc00;
+}
+
+/* Fade-in de la información */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Cuadros informativos */
+.cuadros-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 30px;
+}
+
+.card {
+  background-color: #fff;
+  width: 45%;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+.description-card {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 22%;
+  border-radius: 8px;
+}
+
+.description-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: black;
+  color: yellow;
+  padding: 15px;
+}
