@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eWo Página</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="logo">🎬 eWo</div>
+    <nav class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="programas.html">Programas</a>
+      <a href="tv.html">TV</a>
+      <a href="shopzone.html">ShopZone</a>
+    </nav>
+  </header>
+
+  <!-- CARRUSEL -->
+  <section class="carousel">
+
+    <!-- Slide 1 -->
+    <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_1/fondo_1.jpg');">
+      <div class="carousel-content">
+        <h2>eWo Live: 24 de mayo del 2025</h2>
+        <a href="eventos.html" class="btn">Más Información</a>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="carousel-slide" style="background-image: url('./carrusel-imagenes/carrusel_2/fondo_2.jpg');">
+      <div class="carousel-content">
+        <h2>eWo El Update</h2>
+        <p>Todos los sábados a las 10pm</p>
+        <a href="tv.html" class="btn">Ver en TV</a>
+      </div>
+    </div>
+
+    <!-- Slide 3 (VIDEO) -->
+    <div class="carousel-slide video-slide">
+      <video autoplay muted loop playsinline>
+        <source src="./carrusel-imagenes/carrusel_3/fondovideo_3.mp4" type="video/mp4" />
+        Tu navegador no soporta videos.
+      </video>
+      <div class="video-overlay"></div>
+      <div class="carousel-content">
+        <h2>eWo ShopZone</h2>
+        <a href="shopzone.html" class="btn">Visitar ShopZone</a>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
