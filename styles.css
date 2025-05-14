@@ -1,178 +1,54 @@
-/* Estilos generales */
+/* Animación para el fade-in */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
   color: white;
 }
 
-.top-bar {
-  background-color: #000;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  height: 50px;
-}
-
-.nav-links a {
-  color: yellow;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Carrusel */
-.carousel {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: 400px;
-}
-
-.carousel-wrapper {
-  display: flex;
-  transition: transform 0.6s ease;
-  height: 100%;
-}
-
-.carousel-slide {
-  min-width: 100%;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.video-slide video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.video-overlay {
-  position: absolute;
-  background-color: rgba(0,0,0,0.4);
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-.carousel-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-}
-
-.carousel-content h2,
-.carousel-content p {
-  color: white;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-}
-
-.carousel-content a.btn {
-  font-weight: 600;
-  font-size: 1rem;
-  background-color: yellow;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-  transition: background 0.3s, color 0.3s;
-}
-
-.carousel-content a.btn:hover {
-  background-color: black;
-  color: yellow;
-  border: 2px solid yellow;
-}
-
-/* Botones navegación */
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0,0,0,0.5);
-  color: yellow;
-  font-size: 40px;
-  border: none;
-  cursor: pointer;
-  padding: 10px 15px;
-  z-index: 3;
-  transition: background 0.3s;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-.nav-btn:hover {
-  background-color: rgba(255, 255, 0, 0.7);
-  color: black;
-}
-
-/* Fade-in de texto */
-.fade-in-text {
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-  padding: 40px 20px;
-  text-align: center;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-/* Cuadros de información */
-.info-section {
-  padding: 40px;
-  background-color: #1a1a1a;
-}
-
-.info-boxes {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-}
-
+/* Cuadros con Fade */
 .info-box {
   background-color: #333;
   padding: 20px;
-  width: 45%;
+  margin-bottom: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  width: 300px;  /* Para que sean cuadrados */
+  height: 300px; /* Altura igual a la del ancho */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;  /* Inicialmente ocultos */
+  animation: fadeInUp 1s forwards;  /* Efecto de fade-in */
+  animation-delay: 0.5s;  /* Para que aparezcan con un pequeño retraso */
 }
 
 .info-box h3 {
   font-weight: bold;
   color: yellow;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
 }
 
 .info-box p {
   color: white;
-  line-height: 1.6;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 10px;
 }
 
 /* Secciones de la descripción */
