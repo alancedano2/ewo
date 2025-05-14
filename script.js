@@ -24,6 +24,18 @@ nextBtn.addEventListener('click', () => {
   showSlide(currentSlide);
 });
 
+// Animación para que los cuadros aparezcan con fade-in
+document.addEventListener('DOMContentLoaded', () => {
+  const infoBoxes = document.querySelectorAll('.info-box');
+  let delay = 0;
+  infoBoxes.forEach((box) => {
+    setTimeout(() => {
+      box.classList.add('fade-in');
+    }, delay);
+    delay += 1000; // Incrementa el tiempo de cada fade-in
+  });
+});
+
 setInterval(() => {
   currentSlide++;
   showSlide(currentSlide);
