@@ -1,12 +1,39 @@
+/* Estilos Generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  color: white;
+}
+
+.top-bar {
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.top-bar .logo {
+  width: 150px;
+}
+
+.nav-links {
+  margin-top: 10px;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
 /* Carrusel */
 .carousel {
   position: relative;
   width: 100%;
   height: 400px;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .carousel-wrapper {
@@ -45,6 +72,7 @@
   font-weight: bold;
 }
 
+/* Estilos para el video en el tercer slide */
 .video-slide video {
   width: 100%;
   height: 100%;
@@ -82,50 +110,9 @@
   right: 10px;
 }
 
-.carousel-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Descripción y otros textos */
-.info-section {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.info-boxes {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  padding: 20px;
-}
-
-.info-box {
+/* Footer */
+footer {
   background-color: #333;
   padding: 20px;
-  width: 300px;
-  height: 300px;
-  opacity: 0;
-  animation: fadeInUp 2s forwards;
-}
-
-.info-box h3 {
-  font-size: 1.5rem;
-}
-
-.info-box p {
-  font-size: 1rem;
-}
-
-/* Animación para el fade-in */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  text-align: center;
 }
