@@ -2,71 +2,61 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EWO | Tu Alternativa Real</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EWO</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="carrusel/carrusel.css" />
 </head>
 <body>
 
+  <!-- BARRA SUPERIOR -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="EWO Logo" class="logo"/>
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#programas">Programas</a>
+        <a href="#tv">TV</a>
+        <a href="#shopzone">ShopZone</a>
+      </nav>
+    </div>
+  </header>
+
   <!-- CARRUSEL -->
-  <div class="carousel-container">
-    <div class="slide active">
-      <img src="carrusel/fondo_1.jpg" alt="EWO Slide 1" />
-      <div class="caption">
-        <h2>Xmas Aggression 2024</h2>
-        <p>Regresamos con más fuerza este diciembre.</p>
-        <a href="#" class="btn">Ver Evento</a>
+  <section class="carrusel">
+    <div class="slide fade">
+      <img src="carrusel/fondo_1.jpg" class="background"/>
+      <div class="info">
+        <h2>eWo Live: 24 de mayo del 2025</h2>
+        <a href="#eventos" class="btn">Más información</a>
       </div>
     </div>
 
-    <div class="slide">
-      <img src="carrusel/fondo_2.jpg" alt="EWO Slide 2" />
-      <div class="caption">
-        <h2>Los Toros Salvajes</h2>
-        <p>El tag team más dominante regresa a la acción.</p>
-        <a href="#" class="btn">Conócelos</a>
+    <div class="slide fade">
+      <img src="carrusel/fondo_2.jpg" class="background"/>
+      <div class="info">
+        <h2>eWo El Update</h2>
+        <p>Todos los sábados a las 10PM</p>
+        <a href="#tv" class="btn">Más información</a>
       </div>
     </div>
 
-    <div class="slide">
-      <video autoplay muted loop>
-        <source src="carrusel/fondo_3.mp4" type="video/mp4" />
+    <div class="slide fade">
+      <video class="background video-blur" autoplay muted loop>
+        <source src="carrusel/fondo_3.mp4" type="video/mp4">
       </video>
-      <div class="caption dark">
-        <h2>La Revolución EWO</h2>
-        <p>Una nueva era ha comenzado en la lucha libre puertorriqueña.</p>
-        <a href="#" class="btn">Explorar</a>
+      <div class="info">
+        <h2>eWo ShopZone</h2>
+        <a href="#shopzone" class="btn">Más información</a>
       </div>
     </div>
 
-    <!-- Flechas -->
-    <div class="prev">&#10094;</div>
-    <div class="next">&#10095;</div>
-  </div>
-
-  <!-- SECCIONES INFORMATIVAS -->
-  <section class="info-section">
-    <div class="info-box">
-      <h3>EVENTOS</h3>
-      <p>Entérate de los próximos eventos en vivo de EWO. ¡La acción no se detiene!</p>
-    </div>
-
-    <div class="info-box">
-      <h3>PROGRAMAS</h3>
-      <p>Revive los episodios de EWO TV y conoce a tus luchadores favoritos.</p>
-    </div>
-
-    <div class="info-box">
-      <h3>TV EWO</h3>
-      <p>Disfruta de contenido exclusivo, entrevistas, detrás de cámaras y más.</p>
-    </div>
-
-    <div class="info-box">
-      <h3>SHOPZONE</h3>
-      <p>Compra mercancía oficial de EWO: camisas, gorras, posters y mucho más.</p>
-    </div>
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
   </section>
 
-  <script src="script.js"></script>
+  <script src="carrusel/carrusel.js"></script>
+
 </body>
 </html>
