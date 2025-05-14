@@ -1,16 +1,52 @@
-/* GENERAL */
-body {
+/* RESET Y FUENTES */
+* {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #111;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
   color: #fff;
 }
 
-/* CARRUSEL */
-.carousel-container {
+/* NAVBAR */
+header {
+  background-color: #111;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo {
+  height: 40px;
+}
+
+.navbar nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: yellow;
+}
+
+/* CARRUSEL GENERAL */
+.carrusel {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
   overflow: hidden;
 }
 
@@ -21,70 +57,92 @@ body {
   height: 100%;
 }
 
-.slide.active {
-  display: block;
-  animation: fade 1s ease-in-out;
-}
-
-.slide img,
-.slide video {
+.background {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(2px) brightness(0.6);
+  filter: brightness(0.4);
 }
 
-.caption {
+.video-blur {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.3) blur(2px);
+}
+
+/* INFO DEL SLIDE */
+.info {
   position: absolute;
-  top: 50%;
-  left: 10%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px;
+  bottom: 50px;
+  left: 50px;
+  background: rgba(0,0,0,0.6);
+  padding: 20px 30px;
   border-radius: 15px;
-  max-width: 400px;
-  animation: fadeUp 1s ease-in-out;
+  max-width: 500px;
+  animation: fadeInUp 1s ease;
 }
 
-.caption h2 {
-  font-size: 2.5rem;
+.info h2 {
+  font-size: 32px;
   color: #fff;
   margin-bottom: 10px;
 }
 
-.caption p {
-  font-size: 1.2rem;
+.info p {
+  font-size: 18px;
   color: #ccc;
+  margin-bottom: 15px;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  background: crimson;
-  color: white;
+.info .btn {
+  background-color: yellow;
+  color: #000;
   padding: 10px 20px;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s;
+  border-radius: 10px;
+  font-weight: bold;
 }
 
-.btn:hover {
-  background: darkred;
+/* TRANSICIÓN FADE */
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
 }
 
-/* Flechas */
-.prev,
-.next {
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FLECHAS */
+.prev, .next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2.5rem;
-  color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
+  color: #fff;
+  font-size: 30px;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 50%;
+  user-select: none;
+  z-index: 10;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .prev {
@@ -95,68 +153,6 @@ body {
   right: 20px;
 }
 
-/* INFO SECTIONS ABAJO */
-.info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 50px 20px;
-  background: #1a1a1a;
-  gap: 20px;
-}
-
-.info-box {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid #333;
-  border-radius: 15px;
-  padding: 25px;
-  width: 280px;
-  color: #fff;
-  text-align: center;
-  box-shadow: 0 0 10px #000;
-  transition: transform 0.3s ease, opacity 0.5s ease;
-  opacity: 0;
-  animation: fadeInUp 1s forwards;
-}
-
-.info-box h3 {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-  color: crimson;
-}
-
-.info-box p {
-  font-size: 1rem;
-  color: #ccc;
-}
-
-/* ANIMACIONES */
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 /* SECCIONES INFORMATIVAS */
 .secciones {
   padding: 40px 20px;
@@ -181,5 +177,4 @@ body {
   color: #ddd;
   font-size: 18px;
   line-height: 1.6;
-  }
 }
