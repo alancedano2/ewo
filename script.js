@@ -1,29 +1,9 @@
-let currentSlide = 0;
+let index = 0;
 const slides = document.querySelectorAll('.carousel-slide');
-const totalSlides = slides.length;
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
 
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[index].classList.add('active');
+function showSlide() {
+  index = (index + 1) % slides.length;
+  document.querySelector('.carousel-wrapper').style.transform = `translateX(-${index * 100}%)`;
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  showSlide(currentSlide);
-}
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-// Cambio automático
-setInterval(nextSlide, 5000);
-
-// Mostrar primera al cargar
-showSlide(currentSlide);
+setInterval(showSlide, 15000); // 15 segundos
