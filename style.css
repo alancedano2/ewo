@@ -179,70 +179,71 @@ header {
   line-height: 1.6;
 }
 
-/* PÁGINA TV */
-.fade-in {
-  animation: fadeInUp 1s ease-in-out;
-}
-
-.contenido-tv {
+/* TV.BLOQUES */
+.bloques-tv {
   padding: 40px 20px;
-  background: #111;
+  background-color: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.tv-container {
+.paneles-tv {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  margin-bottom: 40px;
+  justify-content: center;
 }
 
-.tv-player {
-  flex: 1 1 60%;
-  min-height: 360px;
+/* Tarjetas estilo panel */
+.tarjeta-panel {
+  background-color: #1a1a1a;
   border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  padding: 25px;
+  flex: 1 1 45%;
+  min-width: 300px;
+  transition: transform 0.3s ease;
 }
 
-.tv-programacion {
-  flex: 1 1 35%;
-  background: #222;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+.tarjeta-panel:hover {
+  transform: translateY(-5px);
 }
 
-.tv-programacion h2 {
+.sombra {
+  box-shadow: 0 0 20px rgba(255,255,255,0.05);
+}
+
+.titulo-bloque {
   color: yellow;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 15px;
 }
 
-.tv-programacion ul {
+.contenedor-player {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Programación */
+.bloque-programacion ul {
   list-style: none;
   padding-left: 0;
 }
 
-.tv-programacion li {
+.bloque-programacion li {
   color: #ccc;
-  padding: 5px 0;
+  padding: 8px 0;
   border-bottom: 1px solid #333;
+  font-size: 16px;
 }
 
-.tv-info {
+/* Información inferior */
+.bloque-info {
   text-align: center;
-  background: #222;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
-}
-
-.tv-info h2 {
-  font-size: 28px;
-  color: yellow;
-  margin-bottom: 10px;
-}
-
-.tv-info p {
+  background-color: #1a1a1a;
   color: #ccc;
   font-size: 18px;
+  line-height: 1.6;
 }
