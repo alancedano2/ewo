@@ -178,3 +178,71 @@ header {
   font-size: 18px;
   line-height: 1.6;
 }
+
+/* PÁGINA TV */
+.fade-in {
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.contenido-tv {
+  padding: 40px 20px;
+  background: #111;
+}
+
+.tv-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.tv-player {
+  flex: 1 1 60%;
+  min-height: 360px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.tv-programacion {
+  flex: 1 1 35%;
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.tv-programacion h2 {
+  color: yellow;
+  margin-bottom: 10px;
+}
+
+.tv-programacion ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.tv-programacion li {
+  color: #ccc;
+  padding: 5px 0;
+  border-bottom: 1px solid #333;
+}
+
+.tv-info {
+  text-align: center;
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.tv-info h2 {
+  font-size: 28px;
+  color: yellow;
+  margin-bottom: 10px;
+}
+
+.tv-info p {
+  color: #ccc;
+  font-size: 18px;
+}
