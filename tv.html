@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>TV</title></head>
-<body style="background:black;color:white;"><h1>TV</h1></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eWo TV</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo eWo" class="logo">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="programas.html">Programas</a>
+        <a href="tv.html">TV</a>
+        <a href="shopzone.html">ShopZone</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido-tv fade-in">
+
+    <div class="tv-container">
+      <!-- REPRODUCTOR -->
+      <div id="player" class="tv-player"></div>
+
+      <!-- PROGRAMACIÓN -->
+      <div class="tv-programacion">
+        <h2>Programación</h2>
+        <ul>
+          <li>10:00 AM - eWo El Update</li>
+          <li>12:00 PM - Entrevistas Exclusivas</li>
+          <li>2:00 PM - Combates Clásicos</li>
+          <li>4:00 PM - eWo Live Repetición</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- MENSAJE INFORMATIVO -->
+    <section class="tv-info">
+      <h2>eWo TV</h2>
+      <p>Disfruta de la señal oficial de eWo TV 24/7. Eventos, shows semanales y contenido exclusivo para los fanáticos del wrestling puertorriqueño.</p>
+    </section>
+
+  </main>
+
+  <script>
+    new Clappr.Player({
+      source: "https://giatv.bozztv.com/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
+      parentId: "#player",
+      autoPlay: true,
+      mute: false,
+      height: "100%",
+      width: "100%"
+    });
+  </script>
+
+</body>
 </html>
