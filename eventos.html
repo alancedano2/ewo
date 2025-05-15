@@ -2,24 +2,35 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eventos - EWO</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      background-color: #0a0a0a;
-      color: #fff;
-      font-family: 'Segoe UI', sans-serif;
+    body, html {
       margin: 0;
       padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      height: 100%;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
 
     header {
-      background-color: #111;
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 10px 20px;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 10;
     }
 
     .navbar {
@@ -37,7 +48,6 @@
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
 
     .navbar nav a:hover {
@@ -50,21 +60,19 @@
       flex-wrap: wrap;
       gap: 30px;
       padding: 40px 20px;
+      position: relative;
+      z-index: 1;
     }
 
     .evento-tarjeta {
-      background-color: #222;
+      background-color: rgba(34, 34, 34, 0.9);
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
       width: 320px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s ease;
-    }
-
-    .evento-tarjeta:hover {
-      transform: scale(1.05);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
     }
 
     .evento-imagen {
@@ -76,37 +84,30 @@
 
     .evento-contenido {
       padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
     }
 
     .evento-titulo {
       font-size: 24px;
       color: yellow;
-      margin-bottom: 10px;
       font-weight: bold;
     }
 
     .evento-fecha {
       font-size: 14px;
       color: #ccc;
-      margin-bottom: 20px;
-      font-style: italic;
+      margin: 10px 0;
     }
 
     .evento-boton {
       background-color: yellow;
       color: #000;
       font-weight: bold;
-      padding: 12px 0;
+      padding: 10px;
       text-align: center;
       border-radius: 10px;
       text-decoration: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      user-select: none;
+      display: block;
+      margin-top: 10px;
     }
 
     .evento-boton:hover {
@@ -115,6 +116,11 @@
   </style>
 </head>
 <body>
+  <video autoplay muted loop class="bg-video">
+    <source src="ewo_video.mp4" type="video/mp4">
+    Tu navegador no soporta videos HTML5.
+  </video>
+
   <header>
     <div class="navbar">
       <img src="logo.png" alt="Logo" class="logo" />
@@ -130,15 +136,11 @@
 
   <main class="contenedor-eventos">
     <article class="evento-tarjeta">
-      <img
-        src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/492832188_122174629454292934_7570983121437592841_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=75d36f&_nc_ohc=b4A67flrStIQ7kNvwGhDc_m&_nc_oc=Adk4uiKenplIUaDRQWQu1nap8qlkRpSA753eSqFFtlrhRKMSDCXJj8QOVWwM0qE0VAwXdNy-6yqQd0IFhgwVLG5I&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=EKWeEOJPc_adqdBrm8YB4Q&oh=00_AfJ1HxEciseVlD98KcnYNlPhnHQ3WAhCz4IUfGXJjW13wQ&oe=682C442F"
-        alt="EWO Live!"
-        class="evento-imagen"
-      />
+      <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg" alt="EWO Xmas Agression 2024" class="evento-imagen" />
       <div class="evento-contenido">
-        <h2 class="evento-titulo">EWO Live!</h2>
-        <p class="evento-fecha">24 de marzo del 2025</p>
-        <a href="https://regieventos.com" target="_blank" rel="noopener" class="evento-boton">Más Información</a>
+        <h2 class="evento-titulo">EWO Xmas Agression 2024</h2>
+        <p class="evento-fecha">Repetición del 7 de noviembre del 2024</p>
+        <a href="xmas2024.html" class="evento-boton">Más Información</a>
       </div>
     </article>
   </main>
