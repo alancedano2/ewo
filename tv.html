@@ -1,69 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>eWo TV</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-</head>
-<body>
+<!-- ...HEADER IGUAL... -->
 
-  <!-- NAVBAR GLOBAL -->
-  <header>
-    <div class="navbar">
-      <img src="logo.png" alt="Logo eWo" class="logo">
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="eventos.html">Eventos</a>
-        <a href="programas.html">Programas</a>
-        <a href="tv.html">TV</a>
-        <a href="shopzone.html">ShopZone</a>
-        <a href="info.html">Info</a>
-      </nav>
-    </div>
-  </header>
+<main class="bloques-tv fade-in">
 
-  <!-- BLOQUES TIPO PANEL -->
-  <main class="bloques-tv fade-in">
-
-    <div class="paneles-tv">
-      <!-- BLOQUE IZQUIERDO: VIDEO -->
-      <div class="bloque-video tarjeta-panel sombra">
-        <h2 class="titulo-bloque">Señal en Vivo</h2>
-        <div id="player" class="contenedor-player"></div>
-      </div>
-
-      <!-- BLOQUE DERECHO: PROGRAMACIÓN -->
-      <div class="bloque-programacion tarjeta-panel sombra">
-        <h2 class="titulo-bloque">Programación</h2>
-        <ul>
-          <li><strong>10:00 AM</strong> - eWo El Update</li>
-          <li><strong>12:00 PM</strong> - Entrevistas Exclusivas</li>
-          <li><strong>2:00 PM</strong> - Combates Clásicos</li>
-          <li><strong>4:00 PM</strong> - eWo Live Repetición</li>
-        </ul>
-      </div>
+  <div class="paneles-tv">
+    <!-- BLOQUE IZQUIERDO: VIDEO (FULL PLAYER) -->
+    <div class="bloque-video tarjeta-panel sombra">
+      <div id="player" class="contenedor-player-grande"></div>
     </div>
 
-    <!-- BLOQUE DE TEXTO DE INFO -->
-    <section class="bloque-info tarjeta-panel sombra">
-      <h2>Sobre eWo TV</h2>
-      <p>La señal oficial de la empresa. Disfruta programación continua, combates exclusivos y transmisiones especiales para los fans del wrestling puertorriqueño. Disponible 24/7 desde cualquier dispositivo.</p>
-    </section>
+    <!-- BLOQUE DERECHO: PROGRAMACIÓN -->
+    <div class="bloque-programacion tarjeta-panel sombra">
+      <h2 class="titulo-bloque">Programación</h2>
+      <ul>
+        <li><strong>10:00 AM</strong> - eWo El Update</li>
+        <li><strong>12:00 PM</strong> - Entrevistas Exclusivas</li>
+        <li><strong>2:00 PM</strong> - Combates Clásicos</li>
+        <li><strong>4:00 PM</strong> - eWo Live Repetición</li>
+      </ul>
+    </div>
+  </div>
 
-  </main>
+  <!-- INFO DE ABAJO -->
+  <section class="bloque-info tarjeta-panel sombra">
+    <h2>Sobre eWo TV</h2>
+    <p>La señal oficial de la empresa. Disfruta programación continua, combates exclusivos y transmisiones especiales para los fans del wrestling puertorriqueño. Disponible 24/7 desde cualquier dispositivo.</p>
+  </section>
 
-  <script>
-    new Clappr.Player({
-      source: "https://giatv.bozztv.com/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
-      parentId: "#player",
-      autoPlay: true,
-      mute: false,
-      height: "100%",
-      width: "100%"
-    });
-  </script>
+</main>
 
-</body>
-</html>
+<script>
+  new Clappr.Player({
+    source: "https://giatv.bozztv.com/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
+    parentId: "#player",
+    autoPlay: true,
+    mute: false,
+    height: "100%",
+    width: "100%"
+  });
+</script>
