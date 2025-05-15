@@ -1,1 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EWO Xmas Agression 2024</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
 
+    .detalle-evento {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+      background-color: #111;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .imagen-evento {
+      flex: 1 1 500px;
+      max-width: 700px;
+    }
+
+    .imagen-evento img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .info-evento {
+      flex: 1 1 400px;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      background-color: #222;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    .info-evento h1 {
+      font-size: 36px;
+      color: yellow;
+    }
+
+    .info-evento p {
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    .info-evento .btn-ver {
+      background-color: yellow;
+      color: #000;
+      padding: 12px 24px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 10px;
+      width: fit-content;
+      transition: 0.3s;
+    }
+
+    .info-evento .btn-ver:hover {
+      background-color: #fff200;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo" class="logo">
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="tv.html">TV</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="shopzone.html">ShopZone</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- DETALLES DEL EVENTO -->
+  <section class="detalle-evento">
+    <div class="imagen-evento">
+      <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=M3up3s2A8uCBHt01K4zS_g&oh=00_AfJxRgNxW0t1JMHKkc4TKgt-5pS62YhiLmbUvvRH1ENJxA&oe=682C5170" alt="Xmas Agression 2024">
+    </div>
+    <div class="info-evento">
+      <h1>EWO Xmas Agression 2024</h1>
+      <p><strong>Fecha:</strong> 7 de noviembre del 2024</p>
+      <p><strong>Transmitido en:</strong> YouTube</p>
+      <a href="https://www.youtube.com/watch?v=apCyO2BQ2XE&t=3244s" class="btn-ver" target="_blank">Ver</a>
+    </div>
+  </section>
+
+</body>
+</html>
