@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR GLOBAL -->
   <header>
     <div class="navbar">
       <img src="logo.png" alt="Logo eWo" class="logo">
@@ -24,29 +24,32 @@
     </div>
   </header>
 
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="contenido-tv fade-in">
+  <!-- BLOQUES TIPO PANEL -->
+  <main class="bloques-tv fade-in">
 
-    <div class="tv-container">
-      <!-- REPRODUCTOR -->
-      <div id="player" class="tv-player"></div>
+    <div class="paneles-tv">
+      <!-- BLOQUE IZQUIERDO: VIDEO -->
+      <div class="bloque-video tarjeta-panel sombra">
+        <h2 class="titulo-bloque">Señal en Vivo</h2>
+        <div id="player" class="contenedor-player"></div>
+      </div>
 
-      <!-- PROGRAMACIÓN -->
-      <div class="tv-programacion">
-        <h2>Programación</h2>
+      <!-- BLOQUE DERECHO: PROGRAMACIÓN -->
+      <div class="bloque-programacion tarjeta-panel sombra">
+        <h2 class="titulo-bloque">Programación</h2>
         <ul>
-          <li>10:00 AM - eWo El Update</li>
-          <li>12:00 PM - Entrevistas Exclusivas</li>
-          <li>2:00 PM - Combates Clásicos</li>
-          <li>4:00 PM - eWo Live Repetición</li>
+          <li><strong>10:00 AM</strong> - eWo El Update</li>
+          <li><strong>12:00 PM</strong> - Entrevistas Exclusivas</li>
+          <li><strong>2:00 PM</strong> - Combates Clásicos</li>
+          <li><strong>4:00 PM</strong> - eWo Live Repetición</li>
         </ul>
       </div>
     </div>
 
-    <!-- MENSAJE INFORMATIVO -->
-    <section class="tv-info">
-      <h2>eWo TV</h2>
-      <p>Disfruta de la señal oficial de eWo TV 24/7. Eventos, shows semanales y contenido exclusivo para los fanáticos del wrestling puertorriqueño.</p>
+    <!-- BLOQUE DE TEXTO DE INFO -->
+    <section class="bloque-info tarjeta-panel sombra">
+      <h2>Sobre eWo TV</h2>
+      <p>La señal oficial de la empresa. Disfruta programación continua, combates exclusivos y transmisiones especiales para los fans del wrestling puertorriqueño. Disponible 24/7 desde cualquier dispositivo.</p>
     </section>
 
   </main>
