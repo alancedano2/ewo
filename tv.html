@@ -2,27 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eWo TV</title>
-
-  <!-- Clappr -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EWO TV</title>
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* RESET GENERAL */
-    * {
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-
-    /* NAVBAR */
     header {
       background-color: #111;
       padding: 10px 20px;
@@ -53,51 +45,33 @@
       color: yellow;
     }
 
-    /* BLOQUES TV */
-    .bloques-tv {
+    .contenido-tv {
       display: flex;
-      flex-direction: column;
-      gap: 40px;
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .paneles-tv {
-      display: flex;
-      gap: 20px;
       flex-wrap: wrap;
-    }
-
-    .tarjeta-panel {
-      background-color: #1a1a1a;
-      border-radius: 15px;
-      padding: 20px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      gap: 20px;
+      padding: 40px 20px;
     }
 
     .bloque-video {
       flex: 2;
       min-width: 300px;
-    }
-
-    .contenedor-player-grande {
-      width: 100%;
-      height: 480px;
-      border-radius: 12px;
-      overflow: hidden;
-      background-color: #000;
+      animation: fadeIn 1s ease;
     }
 
     .bloque-programacion {
       flex: 1;
       min-width: 280px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      animation: fadeIn 1.5s ease;
     }
 
     .bloque-programacion h2 {
       color: yellow;
       font-size: 22px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .bloque-programacion ul {
@@ -106,58 +80,72 @@
     }
 
     .bloque-programacion li {
-      padding: 8px 0;
+      padding: 5px 0;
       border-bottom: 1px solid #333;
-      font-size: 16px;
       color: #ccc;
     }
 
-    .bloque-info h2 {
+    .tarjeta-panel {
+      background-color: #111;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .contenedor-player-grande {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      background-color: #000;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    #player {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .descripcion-abajo {
+      margin: 30px 20px 60px;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      animation: fadeInUp 1s ease;
+    }
+
+    .descripcion-abajo h3 {
       color: yellow;
       font-size: 24px;
       margin-bottom: 10px;
     }
 
-    .bloque-info p {
+    .descripcion-abajo p {
       font-size: 18px;
-      color: #ddd;
-      line-height: 1.6;
-    }
-
-    .fade-in {
-      animation: fadeIn 1s ease-in-out;
+      color: #ccc;
     }
 
     @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translateY(20px);
       }
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
-
-    @media (max-width: 768px) {
-      .paneles-tv {
-        flex-direction: column;
-      }
-
-      .bloque-video,
-      .bloque-programacion {
-        width: 100%;
-      }
-
-      .contenedor-player-grande {
-        height: 300px;
-      }
-    }
   </style>
 </head>
 <body>
-
-  <!-- NAVBAR -->
   <header>
     <div class="navbar">
       <img src="logo.png" alt="Logo" class="logo" />
@@ -166,53 +154,44 @@
         <a href="tv.html">TV</a>
         <a href="eventos.html">Eventos</a>
         <a href="programas.html">Programas</a>
-        <a href="shopzone.html">ShopZone</a>
+        <a href="shop.html">ShopZone</a>
       </nav>
     </div>
   </header>
 
-  <!-- CONTENIDO TV -->
-  <div class="bloques-tv">
-
-    <!-- BLOQUES PRINCIPALES -->
-    <div class="paneles-tv fade-in">
-
-      <!-- BLOQUE VIDEO -->
-      <div class="bloque-video tarjeta-panel">
-        <div class="contenedor-player-grande" id="player"></div>
-      </div>
-
-      <!-- BLOQUE PROGRAMACIÓN -->
-      <div class="bloque-programacion tarjeta-panel">
-        <h2>Programación</h2>
-        <ul>
-          <li>12:00 PM - Lucha Libre</li>
-          <li>1:00 PM - Entrevistas eWo</li>
-          <li>2:00 PM - Backstage Exclusivo</li>
-          <li>3:00 PM - Repetición de Eventos</li>
-        </ul>
+  <main class="contenido-tv">
+    <div class="bloque-video tarjeta-panel">
+      <div class="contenedor-player-grande">
+        <div id="player"></div>
       </div>
     </div>
 
-    <!-- INFO GENERAL -->
-    <div class="bloque-info tarjeta-panel fade-in">
-      <h2>eWo TV</h2>
-      <p>
-        Disfruta la transmisión en vivo de todo lo que pasa en el mundo de eWo. Desde entrevistas hasta eventos en directo, backstage y contenido exclusivo.
-      </p>
+    <div class="bloque-programacion tarjeta-panel">
+      <h2>Programación</h2>
+      <ul>
+        <!-- Puedes llenar esto luego dinámicamente -->
+        <li>6:00 PM - Lucha Libre</li>
+        <li>7:00 PM - Entrevistas</li>
+        <li>8:00 PM - Evento en Vivo</li>
+      </ul>
     </div>
+  </main>
 
-  </div>
+  <section class="descripcion-abajo">
+    <h3>Sobre EWO TV</h3>
+    <p>
+      EWO TV transmite lo mejor de la acción de la lucha libre puertorriqueña, programación especial, eventos en vivo y contenido exclusivo para nuestros fans alrededor del mundo.
+    </p>
+  </section>
 
-  <!-- SCRIPT CLAPPR -->
   <script>
     new Clappr.Player({
       source: "https://giatv.bozztv.com/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
       parentId: "#player",
       autoPlay: true,
+      mute: false,
       width: "100%",
       height: "100%",
-      mute: false,
       poster: "",
     });
   </script>
