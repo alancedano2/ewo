@@ -1,5 +1,146 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>Eventos</title></head>
-<body style="background:black;color:white;"><h1>Eventos</h1></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventos - EWO</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      height: 40px;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: yellow;
+    }
+
+    .contenedor-eventos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .evento-tarjeta {
+      background-color: #222;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      width: 320px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .evento-tarjeta:hover {
+      transform: scale(1.05);
+    }
+
+    .evento-imagen {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 2px solid yellow;
+    }
+
+    .evento-contenido {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .evento-titulo {
+      font-size: 24px;
+      color: yellow;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .evento-fecha {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .evento-boton {
+      background-color: yellow;
+      color: #000;
+      font-weight: bold;
+      padding: 12px 0;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+
+    .evento-boton:hover {
+      background-color: #d4c100;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="tv.html">TV</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="programas.html">Programas</a>
+        <a href="shop.html">ShopZone</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contenedor-eventos">
+    <article class="evento-tarjeta">
+      <img
+        src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/492832188_122174629454292934_7570983121437592841_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=75d36f&_nc_ohc=b4A67flrStIQ7kNvwGhDc_m&_nc_oc=Adk4uiKenplIUaDRQWQu1nap8qlkRpSA753eSqFFtlrhRKMSDCXJj8QOVWwM0qE0VAwXdNy-6yqQd0IFhgwVLG5I&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=EKWeEOJPc_adqdBrm8YB4Q&oh=00_AfJ1HxEciseVlD98KcnYNlPhnHQ3WAhCz4IUfGXJjW13wQ&oe=682C442F"
+        alt="EWO Live!"
+        class="evento-imagen"
+      />
+      <div class="evento-contenido">
+        <h2 class="evento-titulo">EWO Live!</h2>
+        <p class="evento-fecha">24 de marzo del 2025</p>
+        <a href="https://regieventos.com" target="_blank" rel="noopener" class="evento-boton">Más Información</a>
+      </div>
+    </article>
+  </main>
+</body>
 </html>
