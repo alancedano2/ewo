@@ -3,35 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>eWo TV</title>
+  <title>TV eWo</title>
   <style>
-    body {
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      position: relative;
-      min-height: 100vh;
+      padding: 0;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #eee;
+      background: #111;
       overflow-x: hidden;
     }
 
-    #background-video {
+    /* Video fondo con blur */
+    #bg-video {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
       object-fit: cover;
-      filter: blur(8px);
+      filter: blur(6px);
       z-index: -1;
-      pointer-events: none;
     }
 
+    /* Navbar */
     header {
       background-color: #111;
       padding: 10px 20px;
       position: sticky;
       top: 0;
-      z-index: 1001;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
     }
 
     .navbar {
@@ -57,21 +64,23 @@
       color: yellow;
     }
 
-    .tv-container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 20px;
-      gap: 20px;
-      position: relative;
-      z-index: 1000;
-      justify-content: center;
+    /* Contenedor principal */
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,0,0.5);
     }
 
-    /* Video con max ancho y 16:9 */
+    /* Sección del reproductor */
     .video-section {
       width: 100%;
       max-width: 640px;
-      aspect-ratio: 16 / 9;
+      margin: 0 auto 40px;
+      position: relative;
+      padding-top: 56.25%; /* 16:9 */
       background-color: #000;
       border-radius: 15px;
       box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
@@ -79,83 +88,78 @@
     }
 
     #player {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       border-radius: 15px;
     }
 
-    .schedule-section {
-      flex: 1 1 280px;
-      background-color: rgba(17,17,17, 0.8);
-      padding: 15px;
+    /* Programación */
+    .programacion {
+      max-width: 640px;
+      margin: 0 auto;
+      background: rgba(20,20,20,0.8);
       border-radius: 10px;
-      max-height: 600px;
-      overflow-y: auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.7);
-      color: white;
-      min-width: 280px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.6);
     }
 
-    .schedule-section h2 {
-      color: yellow;
-      margin-top: 0;
+    .programacion h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      border-bottom: 2px solid yellow;
+      padding-bottom: 8px;
+      font-size: 1.5rem;
     }
 
     .programa {
-      background-color: #222;
-      border: 1px solid #555;
-      border-radius: 6px;
-      padding: 10px;
+      background: #222;
       margin-bottom: 10px;
-      font-size: 0.9rem;
+      padding: 12px 15px;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px rgba(255,255,0,0.5);
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      color: #fff;
     }
 
-    .programa strong {
-      display: block;
-      margin-bottom: 4px;
-      color: #ffd700;
+    .programa .hora {
+      font-weight: 700;
+      color: #f0e130;
+      flex-shrink: 0;
+      width: 150px;
     }
 
-    .schedule-section::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .schedule-section::-webkit-scrollbar-track {
+    /* Texto OFF SIGN */
+    .off-sign {
       background: #111;
-      border-radius: 10px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #bbb;
+      box-shadow: inset 0 0 5px rgba(255,255,0,0.3);
+      margin-bottom: 10px;
     }
 
-    .schedule-section::-webkit-scrollbar-thumb {
-      background: #555;
-      border-radius: 10px;
-    }
-
-    @media (max-width: 960px) {
-      .tv-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .schedule-section {
-        max-width: 640px;
-        min-width: auto;
-        width: 100%;
-        margin-top: 20px;
-      }
-    }
   </style>
 </head>
 <body>
-  <video autoplay muted loop id="background-video" playsinline>
+
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video" playsinline>
     <source src="ewo_video.mp4" type="video/mp4" />
-    Tu navegador no soporta video HTML5.
+    Tu navegador no soporta video en background.
   </video>
 
+  <!-- Navbar -->
   <header>
     <div class="navbar">
-      <a href="index.html">
-        <img src="logo.png" alt="Logo eWo" class="logo" />
-      </a>
+      <img src="logo.png" alt="Logo eWo" class="logo" onclick="location.href='index.html'" />
       <nav>
         <a href="index.html">Inicio</a>
         <a href="eventos.html">Eventos</a>
@@ -167,78 +171,66 @@
     </div>
   </header>
 
-  <div class="tv-container">
-    <div class="video-section">
-      <div id="player"></div>
-    </div>
-    <div class="schedule-section">
+  <div class="container">
+
+    <!-- Reproductor -->
+    <section class="video-section">
+      <video id="player" controls playsinline>
+        <source src="https://stream.gia.tv/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8" type="application/x-mpegURL" />
+        Tu navegador no soporta la reproducción de este video.
+      </video>
+    </section>
+
+    <!-- Programación Semanal -->
+    <section class="programacion">
       <h2>Programación Semanal</h2>
 
       <div class="programa">
-        <strong>12:00am hasta las 8:00am</strong>
-        SIGN OFF
+        <div class="hora">12:00am - 8:00am</div>
+        <div>SIGN OFF</div>
       </div>
-
       <div class="programa">
-        <strong>8:00am hasta las 9:30am</strong>
-        eWo La Verdad Absoluta
+        <div class="hora">8:00am - 9:30am</div>
+        <div>eWo La Verdad Absoluta</div>
       </div>
-
       <div class="programa">
-        <strong>9:30am hasta las 10:00am</strong>
-        Cuenta Regresiva para eWo El Update
+        <div class="hora">9:30am - 10:00am</div>
+        <div>Cuenta Regresiva para eWo El Update</div>
       </div>
-
       <div class="programa">
-        <strong>10:00am hasta las 11:00am</strong>
-        eWo El Update
+        <div class="hora">10:00am - 11:00am</div>
+        <div>eWo El Update</div>
       </div>
-
       <div class="programa">
-        <strong>11:00am hasta las 3:00pm</strong>
-        eWo ThrowBack
+        <div class="hora">11:00am - 3:00pm</div>
+        <div>eWo ThrowBack</div>
       </div>
-
       <div class="programa">
-        <strong>3:00pm hasta las 3:30pm</strong>
-        eWo El Perfil
+        <div class="hora">3:00pm - 3:30pm</div>
+        <div>eWo El Perfil</div>
       </div>
-
       <div class="programa">
-        <strong>3:30pm hasta las 5:30pm</strong>
-        eWo 24/7 Retro
+        <div class="hora">3:30pm - 5:30pm</div>
+        <div>eWo 24/7 Retro</div>
       </div>
-
       <div class="programa">
-        <strong>5:30pm hasta las 10:00pm</strong>
-        SIGN OFF
+        <div class="hora">5:30pm - 10:00pm</div>
+        <div>SIGN OFF</div>
       </div>
+    </section>
 
+    <!-- Programación Fin de Semana -->
+    <section class="programacion" style="margin-top:40px;">
       <h2>Programación Fin de Semana</h2>
 
-      <div class="programa">
-        <strong>Sábados</strong>
-        OFF SIGN
-      </div>
+      <h3>Sábados</h3>
+      <div class="off-sign">OFF SIGN</div>
 
-      <div class="programa">
-        <strong>Domingos</strong>
-        OFF SIGN
-      </div>
-    </div>
+      <h3>Domingos</h3>
+      <div class="off-sign">OFF SIGN</div>
+    </section>
+
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
-  <script>
-    const player = new Clappr.Player({
-      source: "https://stream.gia.tv/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
-      parentId: "#player",
-      autoPlay: true,
-      mute: false,
-      width: "100%",
-      height: "100%",
-      poster: "preview.jpg"
-    });
-  </script>
 </body>
 </html>
