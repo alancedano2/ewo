@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>eWo TV</title>
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -10,9 +10,10 @@
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background-color: #000;
-      color: white;
+      color: #fff;
     }
 
+    /* NAVBAR (compartida con otras páginas) */
     header {
       background-color: #111;
       padding: 10px 20px;
@@ -29,6 +30,7 @@
 
     .navbar .logo {
       height: 40px;
+      cursor: pointer;
     }
 
     .navbar nav a {
@@ -45,54 +47,29 @@
 
     .tv-container {
       display: flex;
-      flex-wrap: wrap;
-      padding: 30px;
-      gap: 30px;
-      justify-content: center;
-      background-color: #111;
-    }
-
-    .player {
-      flex: 1 1 600px;
-      max-width: 800px;
-      aspect-ratio: 16 / 9;
-      border: 4px solid #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    .programacion {
-      flex: 1 1 300px;
-      max-width: 400px;
-      background-color: #222;
+      flex-direction: row;
       padding: 20px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .video-section {
+      flex: 2;
+      min-width: 300px;
+      aspect-ratio: 16/9;
+      background-color: #000;
+    }
+
+    .schedule-section {
+      flex: 1;
+      min-width: 250px;
+      background-color: #111;
+      padding: 15px;
       border-radius: 10px;
-      border: 2px solid #fff;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-      animation: fadeIn 1s ease-in-out;
     }
 
-    .programacion h2 {
-      margin-top: 0;
+    .schedule-section h2 {
       color: yellow;
-    }
-
-    .programacion p {
-      margin-bottom: 10px;
-      white-space: pre-line;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
   </style>
 </head>
@@ -114,40 +91,40 @@
     </div>
   </header>
 
-  <!-- CONTENIDO -->
-  <section class="tv-container">
-    <div class="player">
-      <iframe
-        src="https://player.clappr.io?source=https://nbculocallive.akamaized.net/hls/live/2037499/puertorico/stream1/master.m3u8&autoPlay=true"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
+  <!-- TV Section -->
+  <div class="tv-container">
+    <div class="video-section">
+      <div id="player"></div>
     </div>
-
-    <div class="programacion">
+    <div class="schedule-section">
       <h2>Programación Semanal</h2>
-      <p>
-12:00am hasta las 8:00am - SIGN OFF
-8:00am hasta las 9:30am - eWo La Verdad Absoluta
-9:30am hasta las 10:00am - Cuenta Regresiva para eWo El Update
-10:00am hasta las 11:00am - eWo El Update
-11:00am hasta las 3:00pm - eWo ThrowBack
-3:00pm hasta las 3:30pm - eWo El Perfil
-3:30pm hasta las 5:30pm - eWo 24/7 Retro
-5:30pm hasta las 10:00pm - SIGN OFF
-      </p>
+      <p>12:00am hasta las 8:00am - SIGN OFF</p>
+      <p>8:00am hasta las 9:30am - eWo La Verdad Absoluta</p>
+      <p>9:30am hasta las 10:00am - Cuenta Regresiva para eWo El Update</p>
+      <p>10:00am hasta las 11:00am - eWo El Update</p>
+      <p>11:00am hasta las 3:00pm - eWo ThrowBack</p>
+      <p>3:00pm hasta las 3:30pm - eWo El Perfil</p>
+      <p>3:30pm hasta las 5:30pm - eWo 24/7 Retro</p>
+      <p>5:30pm hasta las 10:00pm - SIGN OFF</p>
 
       <h2>Programación Fin de Semana</h2>
-      <p>
-Sábados  
-**OFF SIGN**
-
-Domingos  
-**OFF SIGN**
-      </p>
+      <p><strong>Sábados</strong><br>OFF SIGN</p>
+      <p><strong>Domingos</strong><br>OFF SIGN</p>
     </div>
-  </section>
+  </div>
+
+  <!-- Clappr Player -->
+  <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
+  <script>
+    new Clappr.Player({
+      source: "https://stream.gia.tv/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
+      parentId: "#player",
+      autoPlay: true,
+      mute: false,
+      width: "100%",
+      height: "100%",
+      poster: "preview.jpg"
+    });
+  </script>
 </body>
 </html>
