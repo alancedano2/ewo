@@ -5,120 +5,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>EWO Xmas Agression 2024</title>
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url("https://img.freepik.com/foto-gratis/textura-pared-ladrillo_1194-6421.jpg?semt=ais_hybrid&w=740") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-  }
+  /* NAVBAR (compartida con otras páginas) */
   header {
-    background-color: black;
+    background-color: #111;
     padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
   }
+
   .navbar {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   .navbar .logo {
     height: 40px;
   }
-  nav a {
-    color: white;
-    text-decoration: none;
+
+  .navbar nav a {
+    color: #fff;
     margin-left: 20px;
+    text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
   }
-  nav a:hover {
+
+  .navbar nav a:hover {
     color: yellow;
   }
 
-  .evento-detalle {
-    max-width: 1200px;
+  /* Diseño general de la página */
+  body {
+    margin: 0;
+    background: url('https://img.freepik.com/foto-gratis/textura-pared-ladrillo_1194-6421.jpg?semt=ais_hybrid&w=740') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: white;
+  }
+
+  main {
+    max-width: 1100px;
     margin: 40px auto;
     display: flex;
-    justify-content: center;
     gap: 40px;
-    padding: 20px;
-    background-color: rgba(0,0,0,0.7);
+    padding: 0 20px;
   }
-  .evento-imagen img {
-    width: 600px;
-    height: auto;
-    object-fit: contain;
+
+  .imagen-evento {
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    background: url('https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=M3up3s2A8uCBHt01K4zS_g&oh=00_AfJxRgNxW0t1JMHKkc4TKgt-5pS62YhiLmbUvvRH1ENJxA&oe=682C5170') no-repeat center center;
+    background-size: cover;
+    border-radius: 6px;
+    box-shadow: 0 0 12px rgba(255 255 255 / 0.3);
   }
-  .evento-info {
-    max-width: 400px;
+
+  .detalle-evento {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 15px;
   }
-  .evento-info h1 {
-    color: yellow;
-    margin-bottom: 20px;
+
+  .detalle-evento h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #FFD700;
   }
-  .evento-info p {
-    margin-bottom: 10px;
+
+  .detalle-evento p {
+    font-size: 1.1rem;
+    margin: 0;
   }
-  .boton {
-    background-color: yellow;
-    color: black;
-    padding: 12px 20px;
-    text-decoration: none;
+
+  .detalle-evento .ubicacion {
+    font-style: italic;
+    font-size: 1rem;
+    color: #ccc;
+  }
+
+  .detalle-evento .btn-ver {
+    width: 150px;
+    padding: 12px 0;
+    background-color: #FFD700;
+    color: #111;
     font-weight: bold;
-    width: max-content;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
   }
-  .boton:hover {
+
+  .detalle-evento .btn-ver:hover {
     background-color: #e6c200;
   }
 
-  @media (max-width: 768px) {
-    .evento-detalle {
+  /* Responsive */
+  @media (max-width: 800px) {
+    main {
       flex-direction: column;
-      align-items: center;
+      margin: 20px auto;
     }
-    .evento-imagen img {
+    .imagen-evento, .detalle-evento {
+      flex: none;
       width: 100%;
-      max-width: 600px;
     }
-    .evento-info {
-      max-width: 100%;
-      margin-top: 20px;
-      align-items: center;
-      text-align: center;
+    .imagen-evento {
+      aspect-ratio: auto;
+      height: 250px;
     }
   }
 </style>
 </head>
 <body>
 
+<!-- NAVBAR -->
 <header>
   <div class="navbar">
-    <img src="logo.png" alt="Logo" class="logo" />
+    <img src="logo.png" alt="Logo eWo" class="logo">
     <nav>
       <a href="index.html">Inicio</a>
-      <a href="tv.html">TV</a>
       <a href="eventos.html">Eventos</a>
       <a href="programas.html">Programas</a>
-      <a href="shop.html">ShopZone</a>
+      <a href="tv.html">TV</a>
+      <a href="shopzone.html">ShopZone</a>
+      <a href="info.html">Info</a>
     </nav>
   </div>
 </header>
 
-<section class="evento-detalle">
-  <div class="evento-imagen">
-    <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=GsN_Q8UkRebDJR84DNg3Sg&oh=00_AfKxYBqCtIQXJucdsO1HOLm8P_XfbuHkYpN-HSngsU1IGg&oe=682C5170" alt="EWO Xmas Agression" />
-  </div>
-  <div class="evento-info">
+<main>
+  <div class="imagen-evento"></div>
+  <div class="detalle-evento">
     <h1>EWO Xmas Agression 2024</h1>
-    <p><strong>Fecha:</strong> Repetición del 7 de noviembre del 2024</p>
-    <p><strong>Transmitido por:</strong> YouTube</p>
-    <a class="boton" href="https://www.youtube.com/watch?v=apCyO2BQ2XE&t=3244s" target="_blank" rel="noopener noreferrer">Ver</a>
+    <p>Repetición del 7 de noviembre del 2024</p>
+    <p class="ubicacion">Transmitido en YouTube</p>
+    <a class="btn-ver" href="https://www.youtube.com/watch?v=apCyO2BQ2XE&t=3244s" target="_blank" rel="noopener noreferrer">Mas Informacion</a>
   </div>
-</section>
+</main>
 
 </body>
 </html>
