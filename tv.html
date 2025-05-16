@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>eWo TV</title>
   <style>
-    /* Fuente y fondo negro */
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -15,7 +14,6 @@
       overflow-x: hidden;
     }
 
-    /* Video de fondo con blur */
     #background-video {
       position: fixed;
       top: 0;
@@ -28,7 +26,6 @@
       pointer-events: none;
     }
 
-    /* NAVBAR */
     header {
       background-color: #111;
       padding: 10px 20px;
@@ -60,7 +57,6 @@
       color: yellow;
     }
 
-    /* Contenedor principal TV */
     .tv-container {
       display: flex;
       flex-wrap: wrap;
@@ -68,12 +64,13 @@
       gap: 20px;
       position: relative;
       z-index: 1000;
+      justify-content: center;
     }
 
-    /* Video Section */
+    /* Video con max ancho y 16:9 */
     .video-section {
-      flex: 2 1 600px;
-      min-width: 300px;
+      width: 100%;
+      max-width: 640px;
       aspect-ratio: 16 / 9;
       background-color: #000;
       border-radius: 15px;
@@ -87,7 +84,6 @@
       border-radius: 15px;
     }
 
-    /* Schedule Section */
     .schedule-section {
       flex: 1 1 280px;
       background-color: rgba(17,17,17, 0.8);
@@ -96,6 +92,8 @@
       max-height: 600px;
       overflow-y: auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      color: white;
+      min-width: 280px;
     }
 
     .schedule-section h2 {
@@ -118,7 +116,6 @@
       color: #ffd700;
     }
 
-    /* Scrollbar personalizado para schedule */
     .schedule-section::-webkit-scrollbar {
       width: 8px;
     }
@@ -132,16 +129,28 @@
       background: #555;
       border-radius: 10px;
     }
+
+    @media (max-width: 960px) {
+      .tv-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .schedule-section {
+        max-width: 640px;
+        min-width: auto;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <!-- Video de fondo -->
   <video autoplay muted loop id="background-video" playsinline>
     <source src="ewo_video.mp4" type="video/mp4" />
     Tu navegador no soporta video HTML5.
   </video>
 
-  <!-- NAVBAR -->
   <header>
     <div class="navbar">
       <a href="index.html">
@@ -158,7 +167,6 @@
     </div>
   </header>
 
-  <!-- TV Section -->
   <div class="tv-container">
     <div class="video-section">
       <div id="player"></div>
@@ -220,7 +228,6 @@
     </div>
   </div>
 
-  <!-- Clappr Player -->
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
   <script>
     const player = new Clappr.Player({
