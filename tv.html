@@ -47,29 +47,51 @@
 
     .tv-container {
       display: flex;
-      flex-direction: row;
+      flex-wrap: wrap;
       padding: 20px;
       gap: 20px;
-      flex-wrap: wrap;
     }
 
     .video-section {
-      flex: 2;
+      flex: 2 1 600px;
       min-width: 300px;
-      aspect-ratio: 16/9;
+      aspect-ratio: 16 / 9;
       background-color: #000;
+      position: relative;
+    }
+
+    #player {
+      width: 100%;
+      height: 100%;
     }
 
     .schedule-section {
-      flex: 1;
-      min-width: 250px;
+      flex: 1 1 280px;
       background-color: #111;
       padding: 15px;
       border-radius: 10px;
+      max-height: 600px;
+      overflow-y: auto;
     }
 
     .schedule-section h2 {
       color: yellow;
+      margin-top: 0;
+    }
+
+    .programa {
+      background-color: #222;
+      border: 1px solid #555;
+      border-radius: 6px;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .programa strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #ffd700; /* dorado */
     }
   </style>
 </head>
@@ -98,25 +120,65 @@
     </div>
     <div class="schedule-section">
       <h2>Programación Semanal</h2>
-      <p>12:00am hasta las 8:00am - SIGN OFF</p>
-      <p>8:00am hasta las 9:30am - eWo La Verdad Absoluta</p>
-      <p>9:30am hasta las 10:00am - Cuenta Regresiva para eWo El Update</p>
-      <p>10:00am hasta las 11:00am - eWo El Update</p>
-      <p>11:00am hasta las 3:00pm - eWo ThrowBack</p>
-      <p>3:00pm hasta las 3:30pm - eWo El Perfil</p>
-      <p>3:30pm hasta las 5:30pm - eWo 24/7 Retro</p>
-      <p>5:30pm hasta las 10:00pm - SIGN OFF</p>
+
+      <div class="programa">
+        <strong>12:00am hasta las 8:00am</strong>
+        SIGN OFF
+      </div>
+
+      <div class="programa">
+        <strong>8:00am hasta las 9:30am</strong>
+        eWo La Verdad Absoluta
+      </div>
+
+      <div class="programa">
+        <strong>9:30am hasta las 10:00am</strong>
+        Cuenta Regresiva para eWo El Update
+      </div>
+
+      <div class="programa">
+        <strong>10:00am hasta las 11:00am</strong>
+        eWo El Update
+      </div>
+
+      <div class="programa">
+        <strong>11:00am hasta las 3:00pm</strong>
+        eWo ThrowBack
+      </div>
+
+      <div class="programa">
+        <strong>3:00pm hasta las 3:30pm</strong>
+        eWo El Perfil
+      </div>
+
+      <div class="programa">
+        <strong>3:30pm hasta las 5:30pm</strong>
+        eWo 24/7 Retro
+      </div>
+
+      <div class="programa">
+        <strong>5:30pm hasta las 10:00pm</strong>
+        SIGN OFF
+      </div>
 
       <h2>Programación Fin de Semana</h2>
-      <p><strong>Sábados</strong><br>OFF SIGN</p>
-      <p><strong>Domingos</strong><br>OFF SIGN</p>
+
+      <div class="programa">
+        <strong>Sábados</strong>
+        OFF SIGN
+      </div>
+
+      <div class="programa">
+        <strong>Domingos</strong>
+        OFF SIGN
+      </div>
     </div>
   </div>
 
   <!-- Clappr Player -->
   <script src="https://cdn.jsdelivr.net/npm/clappr@latest/dist/clappr.min.js"></script>
   <script>
-    new Clappr.Player({
+    const player = new Clappr.Player({
       source: "https://stream.gia.tv/giatv/giatv-eWoPRTV/eWoPRTV/playlist.m3u8",
       parentId: "#player",
       autoPlay: true,
