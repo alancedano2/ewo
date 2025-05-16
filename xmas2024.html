@@ -12,12 +12,16 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: url("https://img.freepik.com/foto-gratis/textura-pared-ladrillo_1194-6421.jpg?semt=ais_hybrid&w=740") no-repeat center center fixed;
       background-size: cover;
       color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
+    /* Navbar igual que en las otras páginas */
     header {
       position: sticky;
       top: 0;
@@ -59,6 +63,7 @@
       color: #000;
     }
 
+    /* Contenedor del evento */
     .evento-detalle {
       display: flex;
       flex-wrap: wrap;
@@ -67,13 +72,14 @@
       padding: 40px 20px;
       gap: 40px;
       background-color: rgba(0, 0, 0, 0.7);
-      min-height: 100vh;
+      min-height: calc(100vh - 70px);
       max-width: 1200px;
       margin: 20px auto 40px;
       border-radius: 20px;
       box-shadow: 0 0 30px rgba(255,255,255,0.1);
     }
 
+    /* Imagen evento */
     .evento-imagen {
       flex: 1 1 600px;
       max-width: 800px;
@@ -84,18 +90,23 @@
 
     .evento-imagen img {
       width: 100%;
-      height: auto;
+      height: 100%;
       display: block;
       border-radius: 15px;
-      object-fit: cover;
+      object-fit: contain; /* para que se vea toda la imagen */
+      background: #000;
     }
 
+    /* Info evento */
     .evento-info {
       max-width: 500px;
       background-color: rgba(30, 30, 30, 0.9);
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .evento-info h1 {
@@ -121,6 +132,8 @@
       transition: background 0.3s;
       margin-top: 15px;
       user-select: none;
+      width: fit-content;
+      align-self: flex-start;
     }
 
     .evento-info .boton:hover {
@@ -141,7 +154,6 @@
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
     <div class="navbar">
       <img src="logo.png" alt="Logo" class="logo" />
@@ -155,7 +167,6 @@
     </div>
   </header>
 
-  <!-- Detalle del evento -->
   <section class="evento-detalle">
     <div class="evento-imagen">
       <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=GsN_Q8UkRebDJR84DNg3Sg&oh=00_AfKxYBqCtIQXJucdsO1HOLm8P_XfbuHkYpN-HSngsU1IGg&oe=682C5170" alt="EWO Xmas Agression" />
