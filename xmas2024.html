@@ -1,26 +1,174 @@
-<header>
-  <div class="navbar">
-    <img src="logo.png" alt="Logo eWo" class="logo">
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="eventos.html">Eventos</a>
-      <a href="programas.html">Programas</a>
-      <a href="tv.html">TV</a>
-      <a href="shopzone.html">ShopZone</a>
-      <a href="info.html">Info</a>
-    </nav>
-  </div>
-</header>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EWO Xmas Agression 2024</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<main class="main-container">
-  <img
-    src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=M3up3s2A8uCBHt01K4zS_g&oh=00_AfJxRgNxW0t1JMHKkc4TKgt-5pS62YhiLmbUvvRH1ENJxA&oe=682C5170"
-    alt="EWO Xmas Agression 2024" class="event-image"
-  />
-  <div class="event-info">
-    <h1>EWO Xmas Agression 2024</h1>
-    <p>Repetición del 7 de noviembre del 2024</p>
-    <p class="event-location">Transmitido en YouTube</p>
-    <a href="https://www.youtube.com/watch?v=apCyO2BQ2XE&t=3244s" target="_blank" class="btn-view">Ver</a>
-  </div>
-</main>
+    /* Fuente para toda la página */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #121212;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVBAR */
+    header {
+      background-color: #111;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      height: 40px;
+      /* si quieres font-family distinto aquí, lo puedes poner */
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: yellow;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    main {
+      flex: 1;
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+      background-color: #121212;
+      background-image: url('https://img.freepik.com/foto-gratis/textura-pared-ladrillo_1194-6421.jpg?semt=ais_hybrid&w=740');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* CUADRO IMAGEN DEL EVENTO */
+    .event-image {
+      flex: 1;
+      max-width: 60%;
+      aspect-ratio: 16 / 9;
+      background-image: url('https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=3UIMRlB5K28Q7kNvwHP_ftV&_nc_oc=AdlHFFwXsOTC276b9SQCpavumfP8OhDBRKVH5OQX3T84s8UmLX8FYllw6MitnVpn6dw&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=GsN_Q8UkRebDJR84DNg3Sg&oh=00_AfKxYBqCtIQXJucdsO1HOLm8P_XfbuHkYpN-HSngsU1IGg&oe=682C5170');
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #000000cc;
+    }
+
+    /* CUADRO INFORMACION */
+    .event-info {
+      flex: 1;
+      max-width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      background-color: rgba(30, 30, 30, 0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 15px #000000cc;
+    }
+
+    .event-info h1 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+      font-weight: bold;
+    }
+
+    .event-info p {
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .event-info .event-date,
+    .event-info .event-location {
+      font-size: 1rem;
+      color: #bbb;
+    }
+
+    .event-info .btn-watch {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #ffcc00;
+      color: #111;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+      width: fit-content;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .event-info .btn-watch:hover {
+      background-color: #e6b800;
+    }
+
+    /* Responsive para pantallas pequeñas */
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        padding: 10px;
+      }
+      .event-image, .event-info {
+        max-width: 100%;
+        aspect-ratio: auto;
+      }
+      .event-info {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo eWo" class="logo" />
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="programas.html">Programas</a>
+        <a href="tv.html">TV</a>
+        <a href="shopzone.html">ShopZone</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="event-image" role="img" aria-label="Imagen evento EWO Xmas Agression 2024"></div>
+
+    <div class="event-info">
+      <h1>EWO Xmas Agression 2024</h1>
+      <p class="event-date">Repetición del 7 de noviembre del 2024</p>
+      <p class="event-location">Transmitido en YouTube</p>
+      <a class="btn-watch" href="https://www.youtube.com/watch?v=apCyO2BQ2XE&t=3244s" target="_blank" rel="noopener noreferrer">Ver</a>
+    </div>
+  </main>
+</body>
+</html>
