@@ -2,15 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShopZone | eWo Puerto Rico</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopZone - EWO Puerto Rico</title>
+  <link rel="stylesheet" href="style.css"/>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: #fff;
+      background-color: #111;
+      color: white;
     }
 
     header {
@@ -46,38 +46,47 @@
 
     .banner {
       width: 100%;
-      height: auto;
+      max-height: 300px;
+      object-fit: cover;
+      display: block;
     }
 
-    .content {
-      padding: 20px;
+    .contenido {
+      padding: 30px 20px;
       text-align: center;
     }
 
-    .btn-contacto {
-      background-color: #007bff;
-      color: #fff;
-      padding: 12px 24px;
+    .boton-contacto {
+      display: inline-block;
+      background-color: #1877F2;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
       border: none;
       border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 20px 0;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 30px;
+      transition: background-color 0.3s;
     }
 
-    .fb-embeds {
+    .boton-contacto:hover {
+      background-color: #0e5ccf;
+    }
+
+    .fb-posts {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
       gap: 20px;
-      justify-content: center;
     }
 
-    .fb-embeds iframe {
-      border: none;
-      width: 360px;
-      height: 550px;
-      border-radius: 12px;
-      overflow: hidden;
+    .fb-post-wrapper {
+      background-color: white;
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      max-width: 500px;
     }
   </style>
 </head>
@@ -97,20 +106,30 @@
     </div>
   </header>
 
-  <!-- Banner -->
-  <img class="banner" src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/490104813_677818618069251_2492997831430417542_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=obSRyGYFih0Q7kNvwFeOsoI&_nc_oc=AdkFw4r5zaYmJSLN093A3ldGh3XkWnG0eylppO5Xv_KxOLygN71ybmj8tKWtGO8gQzz02UCUNu23XN1I9oMGvBBR&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=I4rkUM3ih9YYhPxDvChT4Q&oh=00_AfLy8TkvBNjDTTAeNvjbbuF0iI3Em3ToOaMLEWbiDI_ctg&oe=682DA805" alt="Banner eWo" />
+  <!-- BANNER -->
+  <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/490104813_677818618069251_2492997831430417542_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=obSRyGYFih0Q7kNvwFeOsoI&_nc_oc=AdkFw4r5zaYmJSLN093A3ldGh3XkWnG0eylppO5Xv_KxOLygN71ybmj8tKWtGO8gQzz02UCUNu23XN1I9oMGvBBR&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=I4rkUM3ih9YYhPxDvChT4Q&oh=00_AfLy8TkvBNjDTTAeNvjbbuF0iI3Em3ToOaMLEWbiDI_ctg&oe=682DA805" alt="Banner" class="banner"/>
 
-  <div class="content">
-    <h2>Contacta a eWo Puerto Rico en el DM de Facebook</h2>
-    <a href="https://www.facebook.com/ewopuertorico" target="_blank">
-      <button class="btn-contacto">Enviar Mensaje</button>
-    </a>
+  <!-- CONTENIDO -->
+  <section class="contenido">
+    <h2>¿Interesado en mercancía o contacto con EWO Puerto Rico?</h2>
+    <a href="https://www.facebook.com/ewopuertorico" class="boton-contacto" target="_blank">Contáctanos en Facebook</a>
 
-    <div class="fb-embeds">
-      <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fewopuertorico%2Fvideos%2F1036925514463254&show_text=true&width=360" allowfullscreen></iframe>
-      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D122177559776292934%26set%3Da.122096388524292934&show_text=true&width=360" allowfullscreen></iframe>
-      <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D631908662932203%26set%3Da.114369034686171&show_text=true&width=360" allowfullscreen></iframe>
+    <div class="fb-posts">
+      <!-- VIDEO POST -->
+      <div class="fb-post-wrapper">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fewopuertorico%2Fvideos%2F1036925514463254%2F&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </div>
+
+      <!-- PHOTO POST 1 -->
+      <div class="fb-post-wrapper">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D122177559776292934%26set%3Da.122096388524292934&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <!-- PHOTO POST 2 -->
+      <div class="fb-post-wrapper">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D631908662932203%26set%3Da.114369034686171&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
+  </section>
 </body>
 </html>
