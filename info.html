@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Información - EWO</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      position: relative;
+      min-height: 100vh;
+      background: #000;
+    }
+
+    /* Fondo con blur */
+    .bg-image {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: url('https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/481282634_122165886044292934_8651794745663351546_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=I_-tcBzByrUQ7kNvwG541yA&_nc_oc=AdmCe-_PtV4XtjfuJLvGEsC1iIwasBY5or1uMsGs98PWjtxoIffCneG5tFjyfnrCb6QPUkPskd-b_RTlT7oI9Iov&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=m0Ad4K6m6ff0VpFKah9HBQ&oh=00_AfJjNLN8n8xZNYwPLQbztT2PgHBWKea_BBnuQ5Lr_RfiJA&oe=682DAF43') no-repeat center center/cover;
+      filter: blur(12px) brightness(0.4);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(17, 17, 17, 0.9);
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar .logo {
+      height: 40px;
+    }
+
+    .navbar nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar nav a:hover {
+      color: yellow;
+    }
+
+    main {
+      padding: 60px 20px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(20, 20, 20, 0.75);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,255,0,0.2);
+    }
+
+    main h1 {
+      color: yellow;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .info-list {
+      list-style: none;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .info-list li {
+      margin-bottom: 15px;
+    }
+
+    .info-list a {
+      color: yellow;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .info-list a:hover {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image"></div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo eWo" class="logo" />
+      </a>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="programas.html">Programas</a>
+        <a href="tv.html">TV</a>
+        <a href="shopzone.html">ShopZone</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
+    <h1>Información</h1>
+    <ul class="info-list">
+      <li>Facebook: <a href="https://www.facebook.com/ewopuertorico/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
+      <li>YouTube: <a href="https://www.youtube.com/@ewopuertorico" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
+      <li>Instagram: <a href="https://www.instagram.com/ewoluchalibre/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
+    </ul>
+  </main>
+</body>
+</html>
