@@ -80,10 +80,13 @@
       font-size: 18px;
       line-height: 1.6;
       color: #ddd;
+      margin-bottom: 40px;
     }
 
     .info-list li {
       margin-bottom: 15px;
+      display: flex;
+      align-items: center;
     }
 
     .info-list a {
@@ -91,12 +94,69 @@
       font-weight: bold;
       text-decoration: none;
       transition: color 0.3s;
+      margin-left: 8px;
     }
 
     .info-list a:hover {
       color: #ffd700;
       text-decoration: underline;
     }
+
+    /* Iconos svg en linea */
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: yellow;
+      flex-shrink: 0;
+    }
+
+    /* Sección Figuras Destacadas */
+    .figuras {
+      background: rgba(30, 30, 30, 0.85);
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,0,0.3);
+    }
+
+    .figuras h2 {
+      color: yellow;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .figura {
+      margin-bottom: 20px;
+    }
+
+    .figura h3 {
+      color: #ffd700;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .figura .rol {
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .figura p {
+      line-height: 1.5;
+      font-size: 16px;
+      color: #ddd;
+      margin-bottom: 8px;
+    }
+
+    .figura a {
+      color: #ffdd00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .figura a:hover {
+      text-decoration: underline;
+    }
+
   </style>
 </head>
 <body>
@@ -123,10 +183,39 @@
   <main>
     <h1>Información</h1>
     <ul class="info-list">
-      <li>Facebook: <a href="https://www.facebook.com/ewopuertorico/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
-      <li>YouTube: <a href="https://www.youtube.com/@ewopuertorico" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
-      <li>Instagram: <a href="https://www.instagram.com/ewoluchalibre/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a></li>
+      <li>
+        <!-- Facebook icon SVG -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.127V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.797.143v3.243l-1.92.001c-1.505 0-1.797.715-1.797 1.764v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.324-.594 1.324-1.324V1.325C24 .593 23.406 0 22.675 0z"/></svg>
+        <a href="https://www.facebook.com/ewopuertorico/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a>
+      </li>
+      <li>
+        <!-- YouTube icon SVG -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a2.996 2.996 0 0 0-2.112-2.118C19.838 3.5 12 3.5 12 3.5s-7.838 0-9.386.568a2.997 2.997 0 0 0-2.112 2.118 31.091 31.091 0 0 0-.002 5.629 2.996 2.996 0 0 0 2.112 2.118C4.162 16.5 12 16.5 12 16.5s7.838 0 9.386-.568a2.996 2.996 0 0 0 2.112-2.118 31.09 31.09 0 0 0 .002-5.629zM9.546 14.568V9.432l5.818 2.568-5.818 2.568z"/></svg>
+        <a href="https://www.youtube.com/@ewopuertorico" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a>
+      </li>
+      <li>
+        <!-- Instagram icon SVG -->
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.34 3.608 1.314.975.976 1.252 2.243 1.314 3.608.058 1.266.07 1.645.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.34 2.633-1.314 3.608-.976.975-2.243 1.252-3.608 1.314-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.34-3.608-1.314-.975-.976-1.252-2.243-1.314-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.34-2.633 1.314-3.608C4.523 2.503 5.79 2.226 7.156 2.164 8.422 2.106 8.802 2.163 12 2.163zm0-2.163C8.736 0 8.332.012 7.052.07 5.768.127 4.575.38 3.515 1.44 2.456 2.5 2.203 3.693 2.146 4.976c-.058 1.28-.07 1.684-.07 5.028s.012 3.749.07 5.028c.057 1.284.31 2.476 1.37 3.535 1.06 1.06 2.252 1.313 3.535 1.37 1.28.058 1.684.07 5.028.07s3.749-.012 5.028-.07c1.284-.057 2.476-.31 3.535-1.37 1.06-1.06 1.313-2.252 1.37-3.535.058-1.28.07-1.684.07-5.028s-.012-3.749-.07-5.028c-.057-1.284-.31-2.476-1.37-3.535-1.06-1.06-2.252-1.313-3.535-1.37C15.748.012 15.344 0 12 0z"/><path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/><circle cx="18.406" cy="5.594" r="1.44"/></svg>
+        <a href="https://www.instagram.com/ewoluchalibre/" target="_blank" rel="noopener noreferrer">EWO Puerto Rico</a>
+      </li>
     </ul>
+
+    <section class="figuras">
+      <h2>Figuras Destacadas de EWO Puerto Rico</h2>
+
+      <article class="figura">
+        <h3>Neo</h3>
+        <p class="rol">Rol: Fundador y ex luchador principal.</p>
+        <p><strong>Contribución:</strong> Junto a Montana, fundó EWO en 2000 con el objetivo de ofrecer una alternativa fresca en la lucha libre puertorriqueña. Ambos fueron campeones mundiales en IWA y desempeñaron un papel crucial en la creación de la empresa.</p>
+        <p><a href="http://noticiassurpr.blogspot.com" target="_blank" rel="noopener noreferrer">noticiassurpr.blogspot.com</a></p>
+      </article>
+
+      <article class="figura">
+        <h3>Montana</h3>
+        <p class="rol">Rol: Co-fundador y presidente actual de EWO.</p>
+        <p><strong>Contribución:</strong> Tras su retiro del ring, Montana asumió la presidencia de EWO, liderando la promoción hacia una nueva era y enfocándose en el desarrollo de talento local.</p>
+      </article>
+    </section>
   </main>
 </body>
 </html>
