@@ -59,6 +59,20 @@
       filter: blur(10px) brightness(0.5);
     }
 
+    .evento-banner {
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      border-radius: 12px;
+      margin: 20px auto 0 auto;
+      max-width: 800px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
     .eventos-container {
       display: flex;
       flex-wrap: wrap;
@@ -127,11 +141,11 @@
 
   <!-- Navbar -->
   <header>
-  <div class="navbar">
-    <a href="index.html">
-      <img src="logo.png" alt="Logo eWo" class="logo" />
-    </a>
-    <nav>
+    <div class="navbar">
+      <a href="index.html">
+        <img src="logo.png" alt="Logo eWo" class="logo" />
+      </a>
+      <nav>
         <a href="index.html">Inicio</a>
         <a href="eventos.html">Eventos</a>
         <a href="programas.html">Programas</a>
@@ -141,6 +155,11 @@
       </nav>
     </div>
   </header>
+
+  <!-- Banner de aviso -->
+  <div class="evento-banner">
+    Sintoniza los sábados, o en TV para que sepas si hay un evento pronto
+  </div>
 
   <!-- Eventos -->
   <section class="eventos-container">
