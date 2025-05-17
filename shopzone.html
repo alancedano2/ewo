@@ -1,5 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><meta charset="UTF-8"><title>ShopZone</title></head>
-<body style="background:black;color:white;"><h1>ShopZone</h1></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ShopZone | eWo Puerto Rico</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+    header {
+      background-color: #111;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.7);
+    }
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar .logo {
+      height: 40px;
+      cursor: pointer;
+    }
+    .navbar nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .navbar nav a:hover {
+      color: yellow;
+    }
+    .banner {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .contact-section {
+      background: #222;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.3);
+      text-align: center;
+    }
+    .contact-section h2 {
+      margin-bottom: 15px;
+    }
+    .contact-button {
+      display: inline-block;
+      background-color: #1877F2;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+    .contact-button:hover {
+      background-color: #0e63d6;
+    }
+    .embeds {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+    .embed-box {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      padding: 10px;
+      box-shadow: 0 0 8px rgba(255,255,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      iframe {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <img src="logo.png" alt="Logo eWo" class="logo" onclick="location.href='index.html'" />
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="programas.html">Programas</a>
+        <a href="tv.html">TV</a>
+        <a href="shopzone.html">ShopZone</a>
+        <a href="info.html">Info</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/490104813_677818618069251_2492997831430417542_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=obSRyGYFih0Q7kNvwFeOsoI&_nc_oc=AdkFw4r5zaYmJSLN093A3ldGh3XkWnG0eylppO5Xv_KxOLygN71ybmj8tKWtGO8gQzz02UCUNu23XN1I9oMGvBBR&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=I4rkUM3ih9YYhPxDvChT4Q&oh=00_AfLy8TkvBNjDTTAeNvjbbuF0iI3Em3ToOaMLEWbiDI_ctg&oe=682DA805" alt="ShopZone Banner" class="banner" />
+
+  <div class="container">
+
+    <!-- Contacto -->
+    <div class="contact-section">
+      <h2>¿Quieres productos oficiales de eWo Puerto Rico?</h2>
+      <p>Contáctanos directamente por mensaje (DM) en nuestra página oficial de Facebook.</p>
+      <a class="contact-button" href="https://www.facebook.com/ewopuertorico" target="_blank">Contactar vía Facebook</a>
+    </div>
+
+    <!-- Embeds -->
+    <div class="embeds">
+      <div class="embed-box">
+        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fewopuertorico%2Fvideos%2F1036925514463254&show_text=false&width=1000" allowfullscreen></iframe>
+      </div>
+      <div class="embed-box">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D122177559776292934%26set%3Da.122096388524292934&width=1000" allowfullscreen></iframe>
+      </div>
+      <div class="embed-box">
+        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D631908662932203%26set%3Da.114369034686171&width=1000" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+
+</body>
 </html>
