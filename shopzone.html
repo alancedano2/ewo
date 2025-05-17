@@ -74,19 +74,50 @@
       background-color: #0e5ccf;
     }
 
-    .fb-posts {
+    .fb-cards {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 25px;
     }
 
-    .fb-post-wrapper {
-      background-color: white;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    .fb-card {
+      background-color: #fff;
+      color: #000;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      width: 90%;
       max-width: 500px;
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .fb-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .fb-card .content {
+      padding: 15px;
+    }
+
+    .fb-card .content p {
+      margin: 0 0 15px;
+      font-size: 15px;
+    }
+
+    .fb-card .content a {
+      display: inline-block;
+      background-color: #1877F2;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .fb-card .content a:hover {
+      background-color: #0e5ccf;
     }
   </style>
 </head>
@@ -114,21 +145,26 @@
     <h2>¿Interesado en mercancía o contacto con EWO Puerto Rico?</h2>
     <a href="https://www.facebook.com/ewopuertorico" class="boton-contacto" target="_blank">Contáctanos en Facebook</a>
 
-    <div class="fb-posts">
-      <!-- VIDEO POST -->
-      <div class="fb-post-wrapper">
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fewopuertorico%2Fvideos%2F1036925514463254%2F&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+    <div class="fb-cards">
+
+      <!-- POST 1 -->
+      <div class="fb-card">
+        <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/435635426_122177559779292934_8661289140972827239_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5614bc&_nc_ohc=aZqbEr8QOeIQ7kNvgF1C2aE&_nc_ht=scontent.fsig5-1.fna&oh=00_AfByupXVo9HzkC6kWWf0xA4ArO1MQM1Ak1NB7kI7H3n0lQ&oe=682E969A" alt="Post 1"/>
+        <div class="content">
+          <p>¡La mercancía oficial de EWO ya está disponible! Camisas, gorras y más. 🧢👕</p>
+          <a href="https://www.facebook.com/photo?fbid=122177559776292934&set=a.122096388524292934" target="_blank">Ver publicación</a>
+        </div>
       </div>
 
-      <!-- PHOTO POST 1 -->
-      <div class="fb-post-wrapper">
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D122177559776292934%26set%3Da.122096388524292934&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
+      <!-- POST 2 -->
+      <div class="fb-card">
+        <img src="https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/417609186_631908666265536_8485591289120052742_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5614bc&_nc_ohc=X9CzIPVRCqsQ7kNvgE9XWg3&_nc_ht=scontent.fsig5-1.fna&oh=00_AfCwBkUL7KkewqHokO-JK9vGmNVaGhUINhOf6NauLBuYNg&oe=682E18A2" alt="Post 2"/>
+        <div class="content">
+          <p>¡Agradecidos con todos los fans que nos apoyaron en el evento pasado! 🔥</p>
+          <a href="https://www.facebook.com/photo?fbid=631908662932203&set=a.114369034686171" target="_blank">Ver publicación</a>
+        </div>
       </div>
 
-      <!-- PHOTO POST 2 -->
-      <div class="fb-post-wrapper">
-        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto%3Ffbid%3D631908662932203%26set%3Da.114369034686171&show_text=true&width=500" width="500" height="560" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen></iframe>
-      </div>
     </div>
   </section>
 </body>
