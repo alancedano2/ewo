@@ -6,37 +6,16 @@
   <title>Eventos - EWO</title>
   <link rel="icon" type="image/png" href="logo.png" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url("https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/481282634_122165886044292934_8651794745663351546_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=I_-tcBzByrUQ7kNvwG541yA&_nc_oc=AdmCe-_PtV4XtjfuJLvGEsC1iIwasBY5or1uMsGs98PWjtxoIffCneG5tFjyfnrCb6QPUkPskd-b_RTlT7oI9Iov&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=m0Ad4K6m6ff0VpFKah9HBQ&oh=00_AfJjNLN8n8xZNYwPLQbztT2PgHBWKea_BBnuQ5Lr_RfiJA&oe=682DAF43") no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 40px;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: inherit;
-      filter: blur(12px) brightness(0.5);
-      z-index: -1;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: white;
     }
 
     header {
-      background-color: rgba(17,17,17,0.85);
+      background-color: #111;
       padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -47,12 +26,10 @@
     }
 
     nav a {
-      color: #fff;
+      color: white;
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
-      font-size: 16px;
     }
 
     nav a:hover {
@@ -60,41 +37,35 @@
     }
 
     main {
-      max-width: 1000px;
-      margin: 40px auto 0 auto;
-      background: rgba(20, 20, 20, 0.85);
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
 
     h1 {
-      color: yellow;
-      margin-bottom: 25px;
       text-align: center;
+      margin-bottom: 30px;
+      color: yellow;
     }
 
-    .youtube-embed {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    .cuadro {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
     }
 
-    .youtube-embed iframe {
-      position: absolute;
-      top: 0; left: 0;
+    .cuadro iframe {
       width: 100%;
-      height: 100%;
-      border: 0;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html"><img src="logo.png" alt="Logo EWO" class="logo" /></a>
+    <a href="index.html"><img src="logo.png" alt="Logo" class="logo" /></a>
     <nav>
       <a href="index.html">Inicio</a>
       <a href="eventos.html">Eventos</a>
@@ -106,8 +77,8 @@
   </header>
 
   <main>
-    <h1>Eventos de EWO</h1>
-    <div class="youtube-embed">
+    <h1>Eventos</h1>
+    <div class="cuadro">
       <iframe src="https://www.youtube.com/embed/videoseries?list=PLL_e7GP02XY3mZUdF0Vdd6YR_sZtfCq4M" allowfullscreen></iframe>
     </div>
   </main>
