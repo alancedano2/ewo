@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Eventos - EWO</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <style>
     * {
       margin: 0;
@@ -12,178 +13,103 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url("https://scontent.fsig5-1.fna.fbcdn.net/v/t39.30808-6/481282634_122165886044292934_8651794745663351546_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=I_-tcBzByrUQ7kNvwG541yA&_nc_oc=AdmCe-_PtV4XtjfuJLvGEsC1iIwasBY5or1uMsGs98PWjtxoIffCneG5tFjyfnrCb6QPUkPskd-b_RTlT7oI9Iov&_nc_zt=23&_nc_ht=scontent.fsig5-1.fna&_nc_gid=m0Ad4K6m6ff0VpFKah9HBQ&oh=00_AfJjNLN8n8xZNYwPLQbztT2PgHBWKea_BBnuQ5Lr_RfiJA&oe=682DAF43") no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
+      min-height: 100vh;
       position: relative;
+      padding-bottom: 40px;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: inherit;
+      filter: blur(12px) brightness(0.5);
+      z-index: -1;
     }
 
     header {
-      background-color: #111;
+      background-color: rgba(17,17,17,0.85);
       padding: 10px 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
-    }
-
-    .navbar {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .navbar .logo {
+    .logo {
       height: 40px;
     }
 
-    .navbar nav a {
+    nav a {
       color: #fff;
       margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s;
-    }
-
-    .navbar nav a:hover {
-      color: yellow;
-    }
-
-    video.bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      filter: blur(10px) brightness(0.5);
-    }
-
-    .evento-banner {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      text-align: center;
-      padding: 15px 20px;
       font-size: 16px;
-      font-weight: 500;
-      border-radius: 12px;
-      margin: 20px auto 0 auto;
-      max-width: 800px;
-      backdrop-filter: blur(6px);
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
     }
 
-    .eventos-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 30px;
-    }
-
-    .evento-card {
-      background: rgba(20, 20, 20, 0.8);
-      border-radius: 15px;
-      overflow: hidden;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-      transition: transform 0.3s;
-    }
-
-    .evento-card:hover {
-      transform: scale(1.03);
-    }
-
-    .evento-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .evento-card .contenido {
-      padding: 15px;
-    }
-
-    .evento-card h3 {
-      margin-bottom: 5px;
+    nav a:hover {
       color: yellow;
     }
 
-    .evento-card p {
-      font-size: 14px;
-      color: #ccc;
-      margin-bottom: 10px;
+    main {
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+      background: rgba(20, 20, 20, 0.85);
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
     }
 
-    .evento-card .boton {
-      display: inline-block;
-      background-color: yellow;
-      color: #000;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
+    h1 {
+      color: yellow;
+      margin-bottom: 25px;
+      text-align: center;
     }
 
-    .evento-card .boton:hover {
-      background-color: #ffd700;
+    .youtube-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    .youtube-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
 <body>
-
-  <!-- Video de fondo desenfocado -->
-  <video autoplay muted loop class="bg-video">
-    <source src="ewo_video.mp4" type="video/mp4" />
-    Tu navegador no soporta video HTML5.
-  </video>
-
-  <!-- Navbar -->
   <header>
-    <div class="navbar">
-      <a href="index.html">
-        <img src="logo.png" alt="Logo eWo" class="logo" />
-      </a>
-      <nav>
-        <a href="index.html">Inicio</a>
-        <a href="eventos.html">Eventos</a>
-        <a href="programas.html">Programas</a>
-        <a href="tv.html">TV</a>
-        <a href="shopzone.html">ShopZone</a>
-        <a href="info.html">Info</a>
-      </nav>
-    </div>
+    <a href="index.html"><img src="logo.png" alt="Logo EWO" class="logo" /></a>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="eventos.html">Eventos</a>
+      <a href="programas.html">Programas</a>
+      <a href="tv.html">TV</a>
+      <a href="shopzone.html">ShopZone</a>
+      <a href="info.html">Info</a>
+    </nav>
   </header>
 
-  <!-- Banner de aviso -->
-  <div class="evento-banner">
-    Sintoniza los sábados en "El Update" en Youtube, o en TV para que sepas si hay un evento pronto
-  </div>
-
-  <!-- Eventos -->
-  <section class="eventos-container">
-
-    <!-- Evento 1 -->
-    <div class="evento-card">
-      <img src="https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/492832188_122174629454292934_7570983121437592841_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=105&ccb=1-7&_nc_sid=75d36f&_nc_ohc=Ntjnpl6NCcAQ7kNvwHYkQVE&_nc_oc=AdkNbxiDa1qqnxgnzte6Eo499TKGLYh7GQYzeosTKyx5hvfREjvFWNK1lWcut2avw_ExeHM-96-0wOUmtMmSwiH1&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=9WXnmLCirgxdVVh2YdubLg&oh=00_AfKIf5UR2dUqcoWma5uDQZ3aO5K7sHspCSKD0xgcXDNjNA&oe=6833BCAF" alt="EWO Live">
-      <div class="contenido">
-        <h3>EWO Live!</h3>
-        <p>24 de marzo del 2025</p>
-        <a href="https://regieventos.com" class="boton" target="_blank">Más Información</a>
-      </div>
+  <main>
+    <h1>Eventos de EWO</h1>
+    <div class="youtube-embed">
+      <iframe src="https://www.youtube.com/embed/videoseries?list=PLL_e7GP02XY3mZUdF0Vdd6YR_sZtfCq4M" allowfullscreen></iframe>
     </div>
-
-    <!-- Evento 2 -->
-    <div class="evento-card">
-      <img src="https://scontent-lhr6-2.xx.fbcdn.net/v/t39.30808-6/474884627_122160270956292934_8759222449961647132_n.jpg?stp=dst-jpg_s1080x2048_tt6&_nc_cat=105&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=cmivMmimYN8Q7kNvwGnYq1D&_nc_oc=AdlCBhcSCZFhAyaMiZ_qCFLwcSjL7E4qt_juFz_YsQ31OH6MeBM4zNBjOAMs6w5jhWh85-XUBJu8fmF2XEaQO_ly&_nc_zt=23&_nc_ht=scontent-lhr6-2.xx&_nc_gid=zTS68X4r7SD5IvEC-H9xsg&oh=00_AfIR5CNy38MJtX7kRz_ACQSEP-YdvaXGXq3Cl2GL-UVBPA&oe=6833C9F0" alt="EWO Xmas">
-      <div class="contenido">
-        <h3>EWO Xmas Agression 2024</h3>
-        <p>Repetición del 7 de noviembre del 2024</p>
-        <a href="xmas2024.html" class="boton">Más Información</a>
-      </div>
-    </div>
-
-  </section>
+  </main>
 </body>
 </html>
