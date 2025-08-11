@@ -17,7 +17,7 @@ const ProgramasPage: React.FC = () => {
 
         {/* Contenedor principal con el contenido centrado */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen py-10 px-4 md:px-8 lg:px-16">
-          <h1 className="text-4xl font-bold mb-8 drop-shadow-lg mt-10 text-yellow-400 text-center">EWO 'El Update'</h1>
+          <h1 className="text-4xl font-bold mb-8 drop-shadow-lg mt-10 text-yellow-400 text-center">EWO &apos;El Update&apos;</h1>
 
           <div className="flex flex-col md:flex-row items-start md:items-stretch gap-8 max-w-6xl w-full mx-auto">
             {/* Contenedor del video aún más grande */}
