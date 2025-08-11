@@ -1,14 +1,13 @@
-// src/app/eventos/page.tsx
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import FadeInWrapper from '@/components/FadeInWrapper'; // Importa el componente
+import FadeInWrapper from '@/components/FadeInWrapper';
 
 const EventosPage: React.FC = () => {
   return (
-    <FadeInWrapper> {/* Envuelve todo el contenido */}
+    <FadeInWrapper>
       <div className="relative min-h-screen text-white">
+        {/* Fondo con blur */}
         <Image
           src="/background.png"
           alt="Fondo de Eventos"
@@ -17,10 +16,12 @@ const EventosPage: React.FC = () => {
           className="absolute inset-0 blur-md z-[-1]"
         />
 
+        {/* Contenedor principal */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen py-10 gap-8">
           <h1 className="text-4xl font-bold mb-6 drop-shadow-lg mt-10 text-yellow-400">Eventos Anteriores</h1>
 
           <div className="flex flex-col md:flex-row gap-8 max-w-6xl w-full px-4">
+            {/* Contenedor de cuadros de eventos */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full md:w-2/3">
               {/* Cuadro 1 */}
               <div className="bg-gray-900 bg-opacity-70 rounded-lg overflow-hidden shadow-lg max-w-md">
@@ -63,10 +64,11 @@ const EventosPage: React.FC = () => {
               </div>
             </div>
 
+            {/* Cuadro de información a la derecha */}
             <div className="bg-gray-900 bg-opacity-70 rounded-lg shadow-lg p-6 md:w-1/3 h-fit">
               <h2 className="text-xl font-semibold mb-4 text-yellow-400">¿Quieres ver nuevos eventos?</h2>
-              <p className="text-gray-300 mb-2">Para ver los nuevos eventos, sintoniza <strong>"EWO El Update"</strong> todos los sábados a las 10 AM en la página de <Link href="/programas" className="text-blue-400 hover:underline"><strong>Programas</strong></Link>.</p>
-              <p className="text-gray-300">Allí se anuncian los nuevos eventos. También puedes visitar el <Link href="https://www.facebook.com/ewopuertorico" target="_blank" className="text-blue-400 hover:underline"><strong>Facebook de la EWO</strong></Link> para ver si hay un nuevo evento.</p>
+              <p className="text-gray-300 mb-2">Para ver los nuevos eventos, sintoniza <strong>'EWO El Update'</strong> todos los sábados a las 10 AM en la página de <Link href="/programas" className="text-blue-400 hover:underline"><strong>Programas</strong></Link>.</p>
+              <p className="text-gray-300">Allí se anuncian los nuevos eventos. También puedes visitar el <Link href="https://www.facebook.com/EWO_PR" target="_blank" className="text-blue-400 hover:underline"><strong>Facebook de la EWO</strong></Link> para ver si hay un nuevo evento.</p>
             </div>
           </div>
         </div>
